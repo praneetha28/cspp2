@@ -18,16 +18,15 @@ public final class Solution {
         * @param args of type string : command line arguments
     */
     public static void main(final String[] args) {
-
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);
         int n1 = s.nextInt();
         int n2 = s.nextInt();
-        int res = gcd(n1,n2);
+        int res = gcd(n1, n2);
         System.out.println(res);
     }
     /**.
-	Need to write the gcd function and print the output.
-	*@return float
+    Need to write the gcd function and print the output.
+    *@return float
     /**
     * this is comment of function
     * @param a **this is one number**
@@ -41,5 +40,6 @@ public final class Solution {
             }
         }
         return gcdnumber;
-    } 
+    }
 }
+
