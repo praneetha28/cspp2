@@ -10,7 +10,7 @@ public final class Solution {
     /**.
     Do not modify this main function.
     */
-    public static final int N_O = 4;
+    public static final int N_U_M = 4;
     /**.
         this is to calculate farenheit using celsius
     */
@@ -39,7 +39,7 @@ public final class Solution {
     */
     public static double rtsQuadraticEq(final int a, final int b, final int c) {
         double det;
-        det = b * b - N_O * a * c;
+        det = b * b - N_U_M * a * c;
         double r1;
         double r2;
         r1 = (-b + java.lang.Math.sqrt(det)) / (2 * a);
