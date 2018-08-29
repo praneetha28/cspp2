@@ -36,7 +36,7 @@ public final class Solution {
                 if (j % N_O == N_U_M) {
                     count++;
                 }
-                j = j / N_U_M;
+                j = j / N_O;
             }
         }
         System.out.println(count);
