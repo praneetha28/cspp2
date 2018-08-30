@@ -31,18 +31,18 @@ public final class Solution {
 		int[][] arr2 = new int[r1][c1];
 		for (int i = 0; i < r1; i++) {
             for(int j = 0; j < c1; j++) {
-            	arr1[i][j] = sc.nextInt();
+            	arr2[i][j] = sc.nextInt();
             }
         }
         if (r == r1 && c == c1) {
-        	int[][] res = new int[r][c1];
+        	int[][] res = new int[r1][c1];
         	for (int i = 0; i < r; i++) {
         		for (int j = 0; j < c1; j++) {
         			res[i][j] = arr1[i][j] + arr2[i][j];
         		}
         	}
         	for (int i = 0; i < r; i++) {
-        		for (int j = 0; j < c; j++) {
+        		for (int j = 0; j < c1; j++) {
         			System.out.print(res[i][j]+" ");
         		}
         		System.out.println();
