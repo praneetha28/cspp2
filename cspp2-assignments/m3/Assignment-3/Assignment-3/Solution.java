@@ -5,7 +5,7 @@
 
 import java.util.Scanner;
 /**.
-    * scanner function for taking user inputs
+    * scanner function for taking user input
 */
 public final class Solution {
     /**.
