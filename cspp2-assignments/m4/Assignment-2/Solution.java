@@ -35,18 +35,16 @@ public final class Solution {
             }
         }
         if (r == r1 && c == c1) {
+        	String res1 = "";
         	int[][] res = new int[r1][c1];
         	for (int i = 0; i < r; i++) {
         		for (int j = 0; j < c1; j++) {
         			res[i][j] = arr1[i][j] + arr2[i][j];
+        			res1 += res[i][j] + " ";
         		}
+        		res1 = res1.trim() + "\n";
         	}
-        	for (int i = 0; i < r; i++) {
-        		for (int j = 0; j < c1; j++) {
-        			System.out.print(res[i][j]+" ");
-        		}
-        		System.out.println();
-        	}
+        	System.out.println(r);
         } else {
         	System.out.println("not possible");
         }
