@@ -42,9 +42,9 @@ public final class Solution {
         			res[i][j] = arr1[i][j] + arr2[i][j];
         			res1 += res[i][j] + " ";
         		}
-        		res1 += res1.trim() + "\n";
+        		res1 = res1.trim() + "\n";
         	}
-        	System.out.println(r);
+        	System.out.println(res1);
         } else {
         	System.out.println("not possible");
         }
