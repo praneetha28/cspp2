@@ -43,8 +43,9 @@ public final class Solution {
         	}
         	for (int i = 0; i < r; i++) {
         		for (int j = 0; j < c1; j++) {
-        			System.out.print(res[i][j]+" ");
+        			System.out.print(res[i][j]);
         		}
+        		System.out.print(" ");
         		System.out.println();
         	}
         } else {
