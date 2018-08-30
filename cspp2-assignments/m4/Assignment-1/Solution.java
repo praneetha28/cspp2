@@ -8,7 +8,7 @@ import java.util.Scanner;
 */
 public final class Solution {
     /**.
-     Fill the main function to print the number of 7's between 1 to n
+     Fill the main function to print the max of array element
     */
     private Solution() {
         //constructor
