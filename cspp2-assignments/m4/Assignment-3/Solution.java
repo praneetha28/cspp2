@@ -20,8 +20,7 @@ public final class Solution {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         for (int i = 0; i <= n - 1; i++) {
-            sc.nextLine();
-            String s = sc.nextLine();
+            String s = sc.next();
             int res = binaryToDecimal(s);
             System.out.println(res);
         }
