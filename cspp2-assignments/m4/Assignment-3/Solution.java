@@ -37,7 +37,7 @@ public final class Solution {
         int decimal = 0;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == '1') {
-                decimal += Math.pow(2, str.length() - 1 - i);
+                decimal += java.lang.Math.pow(2, str.length() - 1 - i);
             }
         }
         return decimal;
