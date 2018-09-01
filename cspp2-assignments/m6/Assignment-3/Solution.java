@@ -25,8 +25,8 @@ import java.util.Arrays;
      */
     public static char[] replaceAll(final char[] charArray,
         final char oldChar, final char newChar) {
-	// write your code here
-        for ( int  i = 0; i < charArray.length; i++) {
+    // write your code here
+        for (int  i = 0; i < charArray.length; i++) {
             if (charArray[i] == oldChar) {
                 charArray[i] = newChar;
             }
