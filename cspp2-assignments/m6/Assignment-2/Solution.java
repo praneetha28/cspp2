@@ -9,6 +9,39 @@ import java.util.Scanner;
     /**
      * Constructs the object.
      */
+    public static final int N_U_M = 50;
+    /**.
+     * number */
+    public static final int N_U_M_1 = 100;
+    /**.
+     * number */
+    public static final int N_U_M_2 = 150;
+    /**.
+     * number */
+    public static final int N_U_M_3 = 200;
+    /**.
+     * number */
+    public static final int N_U_M_4 = 250;
+    /**.
+     * number */
+    public static final int N_U_M_5 = 300;
+    /**.
+     * number */
+    public static final int N_U_M_6 = 350;
+    /**.
+     * number */
+    public static final int N_U_M_7 = 400;
+    /**.
+     * number */
+    public static final int N_U_M_8 = 450;
+    /**.
+     * number */
+    public static final int N_U_M_9 = 500;
+    /**.
+     * number */
+    public static final int N_U = 550;
+    /**.
+     * number */
     private Solution() {
         //not used
     }
@@ -22,23 +55,22 @@ import java.util.Scanner;
      *
      * @return     Matrix of the rounded elements
      */
-    static int[][] roundHundred(final int[][] a, final int rows, final int columns) {
+    static int[][] roundHundred(final int[][] a,
+        final int rows, final int columns) {
 
-	// write ypur code here
+    // write ypur code here
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if (a[i][j] >= 50 && a[i][j] < 150) {
-                    a[i][j] = 100;
-                } else if (a[i][j] >=150 && a[i][j] < 250) {
-                    a[i][j] = 200;
-                } else if (a[i][j] >=250 && a[i][j] < 350) {
-                    a[i][j] = 300;
-                } else if (a[i][j] >=350 && a[i][j] < 450) {
-                    a[i][j] = 400;
-                } else if (a[i][j] >=450 && a[i][j] < 550) {
-                    a[i][j] = 500;
-                } else {
-                    a[i][j] = 0;
+                if (a[i][j] >= N_U_M && a[i][j] < N_U_M_2) {
+                    a[i][j] = N_U_M_1;
+                } else if (a[i][j] >= N_U_M_2 && a[i][j] < N_U_M_4) {
+                    a[i][j] = N_U_M_3;
+                } else if (a[i][j] >= N_U_M_4 && a[i][j] < N_U_M_6) {
+                    a[i][j] = N_U_M_5;
+                } else if (a[i][j] >= N_U_M_6 && a[i][j] < N_U_M_8) {
+                    a[i][j] = N_U_M_7;
+                } else if (a[i][j] >= N_U_M_8 && a[i][j] < N_U) {
+                    a[i][j] = N_U_M_9;
                 }
             }
         }
