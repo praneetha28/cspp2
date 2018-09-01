@@ -71,6 +71,8 @@ import java.util.Scanner;
                     a[i][j] = N_U_M_7;
                 } else if (a[i][j] >= N_U_M_8 && a[i][j] < N_U) {
                     a[i][j] = N_U_M_9;
+                } else {
+                    a[i][j] = 0;
                 }
             }
         }
