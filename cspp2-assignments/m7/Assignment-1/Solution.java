@@ -53,7 +53,7 @@ class InputValidator {
 */
 public final class Solution {
     /**.
-     Fill the main function to print the number of 7's between 1 to n
+     Fill the main class
     */
     private Solution() {
         //constructor
@@ -69,3 +69,4 @@ public final class Solution {
         System.out.println(i.validateData(length));
     }
 }
+
