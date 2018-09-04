@@ -199,7 +199,7 @@ public class List {
     public boolean contains(int item) {
         // Replace the code below
         int i = indexOf(item); 
-        if (i == item) {
+        if (arr[i] == item) {
         	return true;
         }
         return false;
