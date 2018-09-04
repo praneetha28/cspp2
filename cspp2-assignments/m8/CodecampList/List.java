@@ -73,7 +73,7 @@ public class List {
         // An empty list has how many items?
         // That is the initial value to use for size.
         this.arr = new int[10];
-        this.size = size;
+        this.size = 0;
 
     }
     
