@@ -101,6 +101,7 @@ public class List<E> {
             for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
             }
+            list[size] = null;
             size--;
         } else {
             System.out.println("Invalid Position Exception");
