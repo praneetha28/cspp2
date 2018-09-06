@@ -1,6 +1,9 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-
+import java.util.Arrays;
+/**
+ * List of .
+ */
 public class List {
 	//Implement all the methods mentioned to build a ListADT
 
@@ -111,7 +114,11 @@ public class List {
      */
     public void add(int item) {
         //Inserts the specified element at the end of the zelist.
-        list[size++] = item;   
+        try {
+            list[size++] = item;
+        } catch(Exception e) {
+            resize();
+        }  
     }
 
     /*
@@ -144,9 +151,10 @@ public class List {
      * You know enough of Object Oriented Programming to answer these questions :-)
      *
      */
+    private void resize() {
+        list = Arrays.copyOf(list, size * 2);
 
-    // todo create resize method
-
+    }
     /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
