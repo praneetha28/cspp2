@@ -260,10 +260,10 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public int count(int item) {
+    public int count(final int item) {
         int cnt = 0;
         for (int i = 0; i < size; i++) {
-            if(arr[i] == item) {
+            if (arr[i] == item) {
                 cnt += 1;
             }
         }
@@ -275,8 +275,8 @@ public class List {
      * @param      index  The index
      * @param      item   The item
      */
-    public void ad(int index, int item) {
-        for(int i = size; i > index; i--) {
+    public void ad(final int index, final int item) {
+        for (int i = size; i > index; i--) {
             arr[i] = arr[i - 1];
         }
         arr[index] = item;
@@ -287,11 +287,10 @@ public class List {
      *
      * @param      arr1  The arr 1
      */
-    public void addAll(int[] arr1) {
-        for(int i = 0; i < arr1.length; i++) {
+    public void addAll(final int[] arr1) {
+        for (int i = 0; i < arr1.length; i++) {
             add(arr1[i]);
-        }
-        
+        }   
     }
     /**.
      * { function_description }
@@ -343,15 +342,16 @@ public class List {
                     System.out.println(l.contains(Integer.parseInt(tokens[1])));
                     break;
                 case "ad":
-                    l.ad(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
+                    l.ad(Integer.parseInt(tokens[1]),
+                     Integer.parseInt(tokens[2]));
                     break;
                 case "count":
                     System.out.println(l.count(Integer.parseInt(tokens[1])));
                     break;
                 case "addAll":
                     int[] arr1 = new int[tokens.length - 1];
-                    for(int i = 0; i< tokens.length - 1; i++) {
-                        arr1[i] = Integer.parseInt(tokens[i+1]);
+                    for (int i = 0; i < tokens.length - 1; i++) {
+                        arr1[i] = Integer.parseInt(tokens[i + 1]);
                     }
                     l.addAll(arr1);
                     break;    
