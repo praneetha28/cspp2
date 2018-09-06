@@ -97,8 +97,7 @@ public class List {
      */
     public void add(final int item) {
         //Inserts the specified element at the end of the list.
-        arr[size()] = item;
-        size++;
+        arr[size++] = item;
     }
 
     /*
@@ -257,6 +256,46 @@ public class List {
     /**.
      * { function_description }
      *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int count(int item) {
+        int cnt = 0;
+        for (int i = 0; i < size; i++) {
+            if(arr[i] == item) {
+                cnt += 1;
+            }
+        }
+        return cnt;
+    }
+    /**.
+     * { function_description }
+     *
+     * @param      index  The index
+     * @param      item   The item
+     */
+    public void ad(int index, int item) {
+        for(int i = size; i > index; i--) {
+            arr[i] = arr[i - 1];
+        }
+        arr[index] = item;
+        size++;
+    }
+    /**.
+     * Adds all.
+     *
+     * @param      arr1  The arr 1
+     */
+    public void addAll(int[] arr1) {
+        for(int i = 0; i < arr1.length; i++) {
+            add(arr1[i]);
+        }
+        
+    }
+    /**.
+     * { function_description }
+     *
      * @param      args  The arguments
      */
 
@@ -303,6 +342,19 @@ public class List {
                 case "contains":
                     System.out.println(l.contains(Integer.parseInt(tokens[1])));
                     break;
+                case "ad":
+                    l.ad(Integer.parseInt(tokens[1]), Integer.parseInt(tokens[2]));
+                    break;
+                case "count":
+                    System.out.println(l.count(Integer.parseInt(tokens[1])));
+                    break;
+                case "addAll":
+                    int[] arr1 = new int[tokens.length - 1];
+                    for(int i = 0; i< tokens.length - 1; i++) {
+                        arr1[i] = Integer.parseInt(tokens[i+1]);
+                    }
+                    l.addAll(arr1);
+                    break;    
                 default:
                     break;
             }
