@@ -109,6 +109,10 @@ public class StringList implements StringListInterface{
         size = 0;
         list = new String[capacity];
     }
+
+    private void resize() {
+        list = Arrays.copyOf(list, size * 2);
+    }
     
     /*
      * The add method does what the name suggests.
@@ -122,9 +126,9 @@ public class StringList implements StringListInterface{
      * The method returns void (nothing)
      */
     public void add(final String item) {
-        // if (size == list.length) {
-        //     resize();
-        // }
+        if (size == list.length) {
+            resize();
+        }
         list[size++] = item;
     }
     /*Inserts all the elements of specified int 
