@@ -54,8 +54,8 @@ class Student {
      *
      * @return     { description_of_the_return_value }
      */
-    public int hashcode() {
-        return this.hashcode();
+    public int hashCode() {
+        return this.hashCode();
     }
     /**.
      * Returns a string representation of the object.
