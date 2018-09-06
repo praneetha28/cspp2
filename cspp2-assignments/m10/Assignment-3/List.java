@@ -43,6 +43,9 @@ public class List<E> {
     public void add(E item) {
         //Inserts the specified element at the end of the list.
         //You can modify the code in this method.
+        if (size == list.length) {
+        	resize();
+        }
         list[(size++)] = item;
     }
     /*Inserts all the elements of specified int 
@@ -58,6 +61,17 @@ public class List<E> {
      * to the objects outside the list
      * 
      * The method returns an int. Empty list should return 0.
+     */
+    /**.
+     * { function_description }
+     */
+    private void resize() {
+        list = Arrays.copyOf(list, size * 2);
+    }
+    /**.
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
      */
     public int size() {
         return size;
