@@ -163,7 +163,7 @@ public class List<E> {
      * the item exists and otherwise false
      */
     public boolean contains(E item) {
-		return indexOf(item) > -1;
+		return indexOf(item) >= 0;
     }
     /*
      * Returns the index of the first occurrence 
