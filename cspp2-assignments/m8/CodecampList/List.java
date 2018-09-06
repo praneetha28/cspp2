@@ -290,7 +290,7 @@ public class List {
     public void addAll(final int[] arr1) {
         for (int i = 0; i < arr1.length; i++) {
             add(arr1[i]);
-        } 
+        }
     }
     /**.
      * { function_description }
@@ -361,5 +361,6 @@ public class List {
         }
     }
 }
+
 
 
