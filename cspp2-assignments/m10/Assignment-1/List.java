@@ -288,12 +288,16 @@ public class List {
         The method returns void (nothing)
      */
     public void add(int index,int item) {
-         // write the logic 
-    	for(int i = size; i > index; i--) {
+         // write the logic
+    	if (index < 0) {
+    		System.out.println("Negative Index Exception");
+    	} else {
+    		for(int i = size; i > index; i--) {
             list[i] = list[i - 1];
         }
         list[index] = item;
         size++;
+    	}
     }
     
     /* Returns the count of occurances of a given item in the list*/
