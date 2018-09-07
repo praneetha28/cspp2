@@ -338,7 +338,7 @@ public class List {
      */
     public List subList(int start, int end) {
     	List sublist = new List();
-    	if (start < 0 || end < 0 || start > size || end > size || start > end) {
+    	if (start < 0 || end < 0 || start > end) {
     		System.out.println("Index Out of Bounds Exception");
     		return null;
     	} else {
