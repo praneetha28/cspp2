@@ -180,7 +180,7 @@ public class List<E> {
                 remove(index);
                 index = indexOf(items[i]);
             }
-        }  
+        }
     }
 
     /*Returns a list containing elements, including
@@ -200,7 +200,7 @@ public class List<E> {
         if (n > n2) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        } 
+        }
         if (n == n2) {
             System.out.println("Index Out of Bounds Exception");
             return null;
