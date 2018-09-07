@@ -338,14 +338,15 @@ public class List {
      */
     public List subList(int start, int end) {
     	List sublist = new List();
-    	if (start < end ) {
+    	if (start < 0 || end < 0 || start > size || end > size) {
+    		System.out.println("Index Out of Bounds Exception");
+    		return null;
+    	} else {
     		for (int i = start; i < end; i++) {
     			sublist.add(get(i));
     		}
-    	} else {
-    		System.out.println("Index Out of Bounds Exception");
+    		return sublist;
     	}
-    	return sublist;
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
