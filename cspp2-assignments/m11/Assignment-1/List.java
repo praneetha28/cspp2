@@ -9,7 +9,7 @@ public class List {
 	/**.
     number
     */
-    private static final int X = 30;
+    private static final int X = 10;
     /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
@@ -313,7 +313,7 @@ public class List {
      * @param      newArray  The new array
      */
     public void removeAll(int[] newArray) {
-    	for (int i = 0; i < list.length; i++) {
+    	for (int i = 0; i < newArray.length; i++) {
             int index = indexOf(newArray[i]);
             if (index != -1) {
             	remove(index);
