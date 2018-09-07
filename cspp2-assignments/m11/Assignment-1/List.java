@@ -339,7 +339,7 @@ public class List {
     public List subList(int start, int end) {
     	List sublist = new List();
     	for (int i = start; i < end; i++) {
-    		sublist.add(i);
+    		sublist.add(get(i));
     	}
     	return sublist;
     }
