@@ -216,9 +216,9 @@ public class List {
             str = str + list[i] + ",";
         }
         str = str + list[i] + "]";
-        if (list[0] == 0) {
-            str += "\nInvalid Position Exception";
-        }
+        // if (list[0] == 0) {
+        //     str += "\nInvalid Position Exception";
+        // }
         return str;
     } 
     /*
@@ -338,7 +338,7 @@ public class List {
      */
     public List subList(int start, int end) {
     	List sublist = new List();
-    	if (start >= 0 && end < size) {
+    	if (start >= 0 && end <= size) {
     		for (int i = start; i < end; i++) {
     			sublist.add(get(i));
     		}
