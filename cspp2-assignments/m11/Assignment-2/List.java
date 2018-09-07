@@ -107,7 +107,7 @@ public class List<E> {
      * number of items in the list? Would size variable be useful?
      */
     public E get(int index) {
-        if (index < 0 || index >= size) {
+        if (index < 0 && index >= size) {
             return null;
         } else {
             return list[index];
@@ -210,10 +210,10 @@ public class List<E> {
         }
         for (int i = 0; i < size; i++) {
             if (listdata.contains(this.list[i])) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
     /*Removes all the elements from list*/
     public void clear()
