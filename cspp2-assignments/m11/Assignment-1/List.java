@@ -9,7 +9,7 @@ public class List {
 	/**.
     number
     */
-    private static final int X = 20;
+    private static final int X = 30;
     /*
      * The goal for the list is to store items.
      * How are we going to store the items in the list?
