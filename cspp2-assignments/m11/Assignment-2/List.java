@@ -152,7 +152,7 @@ public class List<E> {
      * the item exists and otherwise false
      */
     public boolean contains(E item) {
-		return indexOf(item) == -1;
+		return indexOf(item) > -1;
 
     }
     /*
@@ -210,10 +210,10 @@ public class List<E> {
         }
         for (int i = 0; i < size; i++) {
             if (listdata.contains(this.list[i])) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
     /*Removes all the elements from list*/
     public void clear()
