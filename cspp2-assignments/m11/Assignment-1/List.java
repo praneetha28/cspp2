@@ -338,7 +338,7 @@ public class List {
      */
     public List subList(int start, int end) {
     	List sublist = new List();
-    	if (start >= 0 && end <= size) {
+    	if (start < end ) {
     		for (int i = start; i < end; i++) {
     			sublist.add(get(i));
     		}
