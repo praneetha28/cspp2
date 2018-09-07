@@ -107,7 +107,7 @@ public class List<E> {
      * number of items in the list? Would size variable be useful?
      */
     public E get(int index) {
-        if (index < 0 && index >= size) {
+        if (index < 0 || index >= size) {
             return null;
         } else {
             return list[index];
