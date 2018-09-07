@@ -338,8 +338,12 @@ public class List {
      */
     public List subList(int start, int end) {
     	List sublist = new List();
-    	for (int i = start; i < end; i++) {
-    		sublist.add(get(i));
+    	if (start >= 0 && end < size) {
+    		for (int i = start; i < end; i++) {
+    			sublist.add(get(i));
+    		}
+    	} else {
+    		System.out.println("Index Out of Bounds Exception");
     	}
     	return sublist;
     }
