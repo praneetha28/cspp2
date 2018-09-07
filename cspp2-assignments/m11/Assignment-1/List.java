@@ -360,11 +360,8 @@ public class List {
      * @return     { description_of_the_return_value }
      */
     public boolean equals(List list ) {
-    	if (size() != list.size()) {
-    		return false;
-    	}
     	if (this.toString() == list.toString()) {
-    			return true;
+    		return true;
     	}
     	return false;
     }
