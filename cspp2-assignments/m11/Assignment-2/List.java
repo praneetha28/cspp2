@@ -173,14 +173,14 @@ public class List<E> {
     /* Removes all of its elements that
      * are contained in the specified int array.
      */
-    public void removeAll(E[] items)
-    {
+    public void removeAll(E[] items) {
         for (int i = 0; i < items.length; i++) {
             int index = indexOf(items[i]);
-            if (index != -1) {
+            while (index != -1) {
                 remove(index);
+                index = indexOf(items[i]);
             }
-        } 
+        }  
     }
 
     /*Returns a list containing elements, including
@@ -189,35 +189,39 @@ public class List<E> {
      indicates the endIndex.
      */
     public List subList(int n, int n2) {
-        List sublist = new List();
-        if (n < 0 || n2 < 0 || n > n2) {
+        if ( n > size || n2 > size) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        } else {
-            for (int i = n; i < n2; i++) {
-                sublist.add(get(i));
-            }
-            return sublist;
         }
+        if (n < 0 || n2 < 0) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        if (n > n2) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        } 
+        if (n == n2) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        List sublist = new List(n2 - n);
+        for(int i = n; i < n2; i++) {
+            sublist.add(this.get(i));
+        }
+        return sublist;
     }
     /*Returns a boolean indicating whether the parameter
       i.e a List object is exactly matching with the given list or not.
      */
     public boolean equals(List<E> listdata)
     {
-        if (size() != listdata.size()) {
-            return false;
-        }
-        for (int i = 0; i < size; i++) {
-            if (listdata.contains(this.list[i])) {
-                return true;
-            }
-        }
-        return false;
+        return this.toString().equals(listdata.toString());
     }
     /*Removes all the elements from list*/
     public void clear()
     {
         size = 0;
+        list = (E[]) new Object[10];
     }
 }
