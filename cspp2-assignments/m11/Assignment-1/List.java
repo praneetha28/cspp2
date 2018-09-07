@@ -360,12 +360,17 @@ public class List {
      * @return     { description_of_the_return_value }
      */
     public boolean equals(List list ) {
+    	int cnt = 0;
     	for (int i = 0; i < list.size(); i++) {
     		if (this.contains(get(i))) {
-    			return true;
+    			cnt += 1;
     		}
     	}
-    	return false;
+    	if (cnt == size) {
+    		return true;
+    	} else {
+    		return false;
+    	}
     }
     /*
     * Removes all the elements from list
