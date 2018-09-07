@@ -234,7 +234,7 @@ public class List {
      * @return     { description_of_the_return_value }
      */
     public boolean contains(int item) {
-        return indexOf(item) == -1;
+        return indexOf(item) >= 0;
     }
     /*
      * Returns the index of the first occurrence of the specified element in
@@ -363,12 +363,10 @@ public class List {
     	if (size() != list.size()) {
     		return false;
     	}
-    	for (int i = 0; i < size; i++) {
-    		if (list.contains(this.list[i])) {
-    			return false;
-    		}
+    	if (this.toString() == list.toString()) {
+    			return true;
     	}
-    	return true;
+    	return false;
     }
     /*
     * Removes all the elements from list
