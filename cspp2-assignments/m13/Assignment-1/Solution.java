@@ -61,10 +61,8 @@ class Set {
     }
     public void add(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
-            int index = indexOf(set[i]);
-            while (index != -1) {
+            if(set[i] != newArray[i]) {
                 add(newArray[i]);
-                index = indexOf(set[i]);
             }
         }
     }
@@ -88,7 +86,7 @@ class Set {
         Set res = new Set();
         for (int i = 0;i < array.length; i++) {
             if(this.contains(array[i])) {
-                res.add(this.get(i));
+                res.add(set[i]);
             }
         }
         return res;
