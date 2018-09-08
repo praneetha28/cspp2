@@ -69,7 +69,7 @@ class Set {
     }
     public Set retainAll(final int[] array) {
         Set res = new Set();
-        for (int i = 0;i < array.length; i++) {
+        for (int i = 0;i < this.size(); i++) {
             if(this.contains(array[i])) {
                 res.add(array[i]);
             }
