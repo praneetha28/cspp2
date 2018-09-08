@@ -12,7 +12,7 @@ class Set {
 	private int[] set;
 	private int size;
 	public Set() {
-        set = new int[10];
+        set = new int[20];
         size = 0;
     }
     public Set(final int capacity) {
