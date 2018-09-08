@@ -86,7 +86,7 @@ class Set {
         Set res = new Set();
         for (int i = 0;i < array.length; i++) {
             if(this.contains(array[i])) {
-                res.add(set[i]);
+                res.add(array[i]);
             }
         }
         return res;
