@@ -51,10 +51,20 @@ class Set {
         }
         set[size++] = item;
     }
+    public int indexOf(final int item) {
+        for (int i = 0; i < size; i++) {
+            if (item == set[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
     public void add(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
-            if(set[i] != newArray[i]) {
+            int index = indexOf(set[i]);
+            while (index == -1) {
                 add(newArray[i]);
+                index = indexOf(set[i]);
             }
         }
     }
@@ -67,11 +77,18 @@ class Set {
         }
         return intersect;
     }
+    public int get(final int index) {
+        if (index < 0 && index >= size) {
+            return -1;
+        } else {
+            return set[index];
+        }
+    }
     public Set retainAll(final int[] array) {
         Set res = new Set();
-        for (int i = 0;i < this.size(); i++) {
+        for (int i = 0;i < array.length; i++) {
             if(this.contains(array[i])) {
-                res.add(array[i]);
+                res.add(this.get(i));
             }
         }
         return res;
