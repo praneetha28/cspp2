@@ -12,7 +12,7 @@ class Set {
 	private int[] set;
 	private int size;
 	public Set() {
-        set = new int[20];
+        set = new int[10];
         size = 0;
     }
     public Set(final int capacity) {
@@ -62,7 +62,7 @@ class Set {
     public void add(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
             int index = indexOf(set[i]);
-            while (index == -1) {
+            while (index != -1) {
                 add(newArray[i]);
                 index = indexOf(set[i]);
             }
@@ -88,7 +88,7 @@ class Set {
         Set res = new Set();
         for (int i = 0;i < array.length; i++) {
             if(this.contains(array[i])) {
-                res.add(this.indexOf(i));
+                res.add(this.get(i));
             }
         }
         return res;
