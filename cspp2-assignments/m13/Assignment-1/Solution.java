@@ -53,7 +53,9 @@ class Set {
     }
     public void add(final int[] newArray) {
         for (int i = 0; i < newArray.length; i++) {
-            add(newArray[i]);
+            if(set[i] != newArray[i]) {
+                add(newArray[i]);
+            }
         }
     }
     public Set intersection(final Set set1) {
