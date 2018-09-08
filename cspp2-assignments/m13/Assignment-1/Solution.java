@@ -76,6 +76,19 @@ class Set {
         }
         return res;
     }
+    // public int[][] cartesianProduct(final Set set2) {
+    //     int[][] cart = new int[this.size][set2.size];
+    //     if (this.size() == 0 || set2.size() == 0) {
+    //         System.out.println("null");
+    //         return null;
+    //     }
+    //     for(int i = 0;i < set.length; i++) {
+    //         for(int j = 0;j < set2.size(); i++ ) {
+    //             cart[i][j] = "[" + set[i] + ", ]";
+    //         }
+    //     }
+    //     return cart;
+    // }
 }
 /**
  * Solution class for code-eval.
