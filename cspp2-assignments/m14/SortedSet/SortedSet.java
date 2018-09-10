@@ -12,7 +12,7 @@ import java.util.Arrays;
 /**.
  * List of .
  */
-public class SortedSet extends Set{
+public class SortedSet extends Set {
     /**.
      * { function_description }
      *
@@ -31,7 +31,7 @@ public class SortedSet extends Set{
      *
      * @param      item  The item
      */
-    public void add(int item) {
+    public void add(final int item) {
         if (!contains(item)) {
             int index = getIndex(item);
             add(index, item);
@@ -44,8 +44,8 @@ public class SortedSet extends Set{
      *
      * @return     The index.
      */
-    public int getIndex(int item) {
-        for(int i = 0; i < size(); i++) {
+    public int getIndex(final int item) {
+        for (int i = 0; i < size(); i++) {
             if (item <= this.get(i)) {
                 return i;
             }
@@ -60,7 +60,7 @@ public class SortedSet extends Set{
      *
      * @return     { description_of_the_return_value }
      */
-    public int[] subSet(int fromele , int toele) {
+    public int[] subSet(final int fromele, final int toele) {
         int fromindex = getIndex(fromele);
         int toindex = getIndex(toele);
         int[] subset = new int[toindex - fromindex];
@@ -77,7 +77,7 @@ public class SortedSet extends Set{
      *
      * @return     { description_of_the_return_value }
      */
-    public int[] headset(int toele) {
+    public int[] headset(final int toele) {
         return subSet(get(0), toele);
     }
     /**.
@@ -104,7 +104,7 @@ public class SortedSet extends Set{
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         SortedSet s = new SortedSet();
         // code to read the test cases input file
         Scanner stdin = new Scanner(new BufferedInputStream(System.in));
