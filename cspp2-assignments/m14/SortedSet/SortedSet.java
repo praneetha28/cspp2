@@ -13,6 +13,11 @@ import java.util.Arrays;
  * List of .
  */
 public class SortedSet extends Set{
+    /**.
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int last() {
         if (size() == 0) {
             System.out.println("Set Empty Exception");
@@ -21,12 +26,24 @@ public class SortedSet extends Set{
             return get(size() - 1);
         }
     }
+    /**.
+     * { function_description }
+     *
+     * @param      item  The item
+     */
     public void add(int item) {
         if (!contains(item)) {
             int index = getIndex(item);
             add(index, item);
         }
     }
+    /**.
+     * Gets the index.
+     *
+     * @param      item  The item
+     *
+     * @return     The index.
+     */
     public int getIndex(int item) {
         for(int i = 0; i < size(); i++) {
             if (item <= this.get(i)) {
@@ -35,6 +52,14 @@ public class SortedSet extends Set{
         }
         return size();
     }
+    /**.
+     * { function_description }
+     *
+     * @param      fromele  The fromele
+     * @param      toele    The toele
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int[] subSet(int fromele , int toele) {
         int fromindex = getIndex(fromele);
         int toindex = getIndex(toele);
@@ -45,24 +70,23 @@ public class SortedSet extends Set{
         }
         return subset;
     }
+    /**.
+     * { function_description }
+     *
+     * @param      toele  The toele
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int[] headset(int toele) {
-        // int hdset = new int[];
-        // int k = 0;
-        // for (int i = 0; i < set.size(); i++) {
-        //     if (set[i] < toele) {
-        //         hdset[k++] = set[i];
-        //     }
-        // }
-        // if (this.get(0) > toele) {
-        //     return ;
-        // }
         return subSet(get(0), toele);
     }
-    // public void add(int[] array) {
-    //     for (int element : array) {
-    //         add(element);
-    //     }
-    // }
+    /**.
+     * { function_description }
+     *
+     * @param      s     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public static int[] intArray(final String s) {
         String input = s;
         if (input.equals("[]")) {
@@ -75,6 +99,11 @@ public class SortedSet extends Set{
                             .mapToInt(Integer::parseInt)
                             .toArray();
     }
+    /**.
+     * { function_description }
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         SortedSet s = new SortedSet();
         // code to read the test cases input file
