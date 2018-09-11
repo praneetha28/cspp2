@@ -65,7 +65,6 @@ public class List {
      * to be accessed by the methods that are outside of the List class.
      *
      */
-
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
@@ -107,7 +106,6 @@ public class List {
      * The assumption is to store the item at the end of the list What is the
      * end of the list? Is it the same as the end of the array? Think about how
      * you can use the size variable to add item to the list.
-     *
      * The method returns void (nothing)
      */
     /**.
@@ -141,7 +139,6 @@ public class List {
         // replace the code below to implement the size method
         return size;
     }
-
     /*
      * The remove method does what the name suggests. Removes an int item,
      * specified by the index argument, from the list It also does an additional
@@ -154,7 +151,6 @@ public class List {
      * to remove it is to move all the items, that are to the right of the
      * removed item, to the left So, the new array looks like this. array =
      * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
-     *
      */
     /**.
      * { function_description }
@@ -173,7 +169,6 @@ public class List {
             size--;
         }
     }
-
     /*
      * Get method has to return the items that is at the index position passed
      * as an argument to the method. If the item doesn't exist then return a -1
@@ -422,13 +417,13 @@ public class List {
                             l.add(Integer.parseInt(tokens[1]));
                         }
                     }
-                break;
+                    break;
                 case "size":
                     System.out.println(l.size());
-                break;
+                    break;
                 case "print":
                     System.out.println(l);
-                break;
+                    break;
                 case "remove":
                     try {
                         if (tokens.length == 2) {
@@ -437,7 +432,7 @@ public class List {
                     } catch (Exception e) {
                         System.out.println("Invalid Position Exception");
                     }
-                break;
+                    break;
                 case "indexOf":
                     if (tokens.length == 2) {
                         System.out.println(l.indexOf(
@@ -449,13 +444,13 @@ public class List {
                         System.out.println(l.get(
                             Integer.parseInt(tokens[1])));
                     }
-                break;
+                    break;
                 case "contains":
                     if (tokens.length == 2) {
                         System.out.println(l.contains(
                             Integer.parseInt(tokens[1])));
                     }
-                break;
+                    break;
                 case "addAll":
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
@@ -465,7 +460,7 @@ public class List {
                         }
                         l.addAll(temp);
                     }
-                break;
+                    break;
                 case "removeAll":
                     try {
                         if (tokens.length == 2) {
@@ -479,8 +474,7 @@ public class List {
                     } catch (Exception e) {
                         System.out.println("Invalid Position Exception");
                     }
-
-                break;
+                    break;
                 case "subList":
                     try {
                         if (tokens.length != 2) {
@@ -506,12 +500,13 @@ public class List {
                         }
                         System.out.println(l.equals(l2));
                     }
-                break;
+                    break;
                 case "clear":
                     l.clear();
-                break;
+                    break;
                 case "count":
                     System.out.println(l.count(Integer.parseInt(tokens[1])));
+                    break;
                 default:
                 break;
             }
