@@ -71,7 +71,7 @@ public class SortedSet extends Set {
      */
     public int[] subSet(final int fromele, final int toele) throws InvalidSubSetSelectionException {
         if (fromele > toele) {
-            throw new InvalidSubSetSelectionException("Invalid Arguments To Subset Exception");
+            throw new InvalidSubSetSelectionException("Invalid Arguments to Subset Exception");
         } else {
             int fromindex = getIndex(fromele);
             int toindex = getIndex(toele);
@@ -91,7 +91,7 @@ public class SortedSet extends Set {
      * @return     { description_of_the_return_value }
      */
     public int[] headset(final int toele) throws SetEmptyException, InvalidSubSetSelectionException {
-        if (size() == 0) {
+        if (toele <= this.get(0)) {
             throw new SetEmptyException("Set Empty Exception");
         } else {
             return subSet(get(0), toele);
@@ -186,8 +186,33 @@ public class SortedSet extends Set {
                     System.out.println(e.getMessage());
                 }
                 break;
-            default:
-                break;
+                case "intersection":
+                    s = new SortedSet();
+                    SortedSet t = new SortedSet();
+                    intArray = intArray(tokens[1]);
+                    s.add(intArray);
+                    intArray = intArray(tokens[2]);
+                    t.add(intArray);
+                    System.out.println(s.intersection(t));
+                    break;
+                case "retainAll":
+                    s = new SortedSet();
+                    intArray = intArray(tokens[1]);
+                    s.add(intArray);
+                    intArray = intArray(tokens[2]);
+                    System.out.println(s.retainAll(intArray));
+                    break;
+                case "cartesianProduct":
+                    s = new SortedSet();
+                    t = new SortedSet();
+                    intArray = intArray(tokens[1]);
+                    s.add(intArray);
+                    intArray = intArray(tokens[2]);
+                    t.add(intArray);
+                    System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+                    break;
+                default:
+                    break;
             }
         }
     }
