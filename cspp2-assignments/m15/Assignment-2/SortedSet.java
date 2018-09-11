@@ -10,23 +10,31 @@ import java.util.Scanner;
  */
 import java.util.Arrays;
 /**.
- * List of .
+ * Exception for signaling set empty errors.
  */
 class SetEmptyException extends Exception {
-    SetEmptyException(String s) {
+    SetEmptyException(final String s) {
         super(s);
     }
 }
+/**.
+ * Exception for signaling invalid sub set selection errors.
+ */
 class InvalidSubSetSelectionException extends Exception {
-    InvalidSubSetSelectionException(String s) {
+    InvalidSubSetSelectionException(final String s) {
         super(s);
     }
 }
+/**.
+ * Class for sorted set.
+ */
 public class SortedSet extends Set {
     /**.
      * { function_description }
      *
      * @return     { description_of_the_return_value }
+     *
+     * @throws     SetEmptyException  { exception_description }
      */
     public int last() throws SetEmptyException {
         if (size() == 0) {
@@ -64,12 +72,15 @@ public class SortedSet extends Set {
     /**.
      * { function_description }
      *
-     * @param      fromele  The fromele
-     * @param      toele    The toele
+     * @param      fromele                          The fromele
+     * @param      toele                            The toele
      *
      * @return     { description_of_the_return_value }
+     *
+     * @throws     InvalidSubSetSelectionException  { exception_description }
      */
-    public int[] subSet(final int fromele, final int toele) throws InvalidSubSetSelectionException {
+    public int[] subSet(final int fromele, final int toele)
+                            throws InvalidSubSetSelectionException {
         if (fromele > toele) {
             throw new InvalidSubSetSelectionException("Invalid Arguments to Subset Exception");
         } else {
@@ -86,11 +97,15 @@ public class SortedSet extends Set {
     /**.
      * { function_description }
      *
-     * @param      toele  The toele
+     * @param      toele                            The toele
      *
      * @return     { description_of_the_return_value }
+     *
+     * @throws     SetEmptyException                { exception_description }
+     * @throws     InvalidSubSetSelectionException  { exception_description }
      */
-    public int[] headset(final int toele) throws SetEmptyException, InvalidSubSetSelectionException {
+    public int[] headset(final int toele) throws SetEmptyException,
+                             InvalidSubSetSelectionException {
         if (toele <= this.get(0)) {
             throw new SetEmptyException("Set Empty Exception");
         } else {
