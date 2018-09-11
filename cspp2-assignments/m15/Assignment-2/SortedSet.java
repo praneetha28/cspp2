@@ -13,6 +13,11 @@ import java.util.Arrays;
  * Exception for signaling set empty errors.
  */
 class SetEmptyException extends Exception {
+    /**.
+     * Constructs the object.
+     *
+     * @param      s     { parameter_description }
+     */
     SetEmptyException(final String s) {
         super(s);
     }
@@ -21,6 +26,11 @@ class SetEmptyException extends Exception {
  * Exception for signaling invalid sub set selection errors.
  */
 class InvalidSubSetSelectionException extends Exception {
+    /**.
+     * Constructs the object.
+     *
+     * @param      s     { parameter_description }
+     */
     InvalidSubSetSelectionException(final String s) {
         super(s);
     }
@@ -82,7 +92,8 @@ public class SortedSet extends Set {
     public int[] subSet(final int fromele, final int toele)
                             throws InvalidSubSetSelectionException {
         if (fromele > toele) {
-            throw new InvalidSubSetSelectionException("Invalid Arguments to Subset Exception");
+            throw new InvalidSubSetSelectionException(
+                "Invalid Arguments to Subset Exception");
         } else {
             int fromindex = getIndex(fromele);
             int toindex = getIndex(toele);
@@ -224,7 +235,8 @@ public class SortedSet extends Set {
                     s.add(intArray);
                     intArray = intArray(tokens[2]);
                     t.add(intArray);
-                    System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
+                    System.out.println(Arrays.deepToString(
+                        s.cartesianProduct(t)));
                     break;
                 default:
                     break;
