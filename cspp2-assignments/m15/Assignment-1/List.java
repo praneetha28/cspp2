@@ -345,22 +345,18 @@ public class List {
      *
      * @return     { description_of_the_return_value }
      */
-    public List subList(final int start, final int end) {
+    public List subList(final int start, final int end) throws Exception {
         if (start > size || end > size) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
+            throw new Exception();
         }
         if (start < 0 || end < 0) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
+            throw new Exception();
         }
         if (start > end) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
+            throw new Exception();
         }
         if (start == end) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
+            throw new Exception();
         }
         List sublist = new List(end - start);
         for (int i = start; i < end; i++) {
@@ -481,15 +477,20 @@ public class List {
 
                 break;
                 case "subList":
-                    if (tokens.length != 2) {
-                        break;
+                    try {
+                        if (tokens.length != 2) {
+                            break;
+                        }
+                        String[] arrstring3 = tokens[1].split(",");
+                        List object = l.subList(Integer.parseInt(arrstring3[0]),
+                                    Integer.parseInt(arrstring3[1]));
+                        if (object != null) {
+                            System.out.println(object);
+                        }
+                    } catch (Exception e) {
+                        System.out.println("Index Out of Bounds Exception");
                     }
-                    String[] arrstring3 = tokens[1].split(",");
-                    List object = l.subList(Integer.parseInt(arrstring3[0]),
-                            Integer.parseInt(arrstring3[1]));
-                    if (object != null) {
-                        System.out.println(object);
-                    }
+
                     break;
                 case "equals":
                     if (tokens.length == 2) {
