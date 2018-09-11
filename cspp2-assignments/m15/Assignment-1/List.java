@@ -159,7 +159,9 @@ public class List {
     /**.
      * { function_description }
      *
-     * @param      index  The index
+     * @param      index      The index
+     *
+     * @throws     Exception  { exception_description }
      */
     public void remove(final int index) throws Exception {
         if (index < 0 || index >= size) {
@@ -318,9 +320,11 @@ public class List {
     /**.
      * Removes all.
      *
-     * @param      newArray  The new array
+     * @param      newArray   The new array
+     *
+     * @throws     Exception  { exception_description }
      */
-    public void removeAll(final int[] newArray) throws Exception{
+    public void removeAll(final int[] newArray) throws Exception {
         for (int i = 0; i < newArray.length; i++) {
             int index = indexOf(newArray[i]);
             while (index != -1) {
@@ -340,10 +344,12 @@ public class List {
     /**.
      * { function_description }
      *
-     * @param      start  The start
-     * @param      end    The end
+     * @param      start      The start
+     * @param      end        The end
      *
      * @return     { description_of_the_return_value }
+     *
+     * @throws     Exception  { exception_description }
      */
     public List subList(final int start, final int end) throws Exception {
         if (start > size || end > size) {
@@ -428,8 +434,7 @@ public class List {
                         if (tokens.length == 2) {
                             l.remove(Integer.parseInt(tokens[1]));
                         }
-                    }
-                    catch (Exception e) {
+                    } catch (Exception e) {
                         System.out.println("Invalid Position Exception");
                     }
                 break;
