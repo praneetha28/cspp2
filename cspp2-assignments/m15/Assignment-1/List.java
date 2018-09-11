@@ -161,7 +161,7 @@ public class List {
      */
     public void remove(final int index) throws Exception {
         if (index < 0 || index >= size) {
-            throw new Exception();
+            throw new Exception("Invalid Position Exception");
         } else {
             for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
@@ -348,16 +348,16 @@ public class List {
      */
     public List subList(final int start, final int end) throws Exception {
         if (start > size || end > size) {
-            throw new Exception();
+            throw new Exception("Index Out of Bounds Exception");
         }
         if (start < 0 || end < 0) {
-            throw new Exception();
+            throw new Exception("Index Out of Bounds Exception");
         }
         if (start > end) {
-            throw new Exception();
+            throw new Exception("Index Out of Bounds Exception");
         }
         if (start == end) {
-            throw new Exception();
+            throw new Exception("Index Out of Bounds Exception");
         }
         List sublist = new List(end - start);
         for (int i = start; i < end; i++) {
@@ -430,7 +430,7 @@ public class List {
                             l.remove(Integer.parseInt(tokens[1]));
                         }
                     } catch (Exception e) {
-                        System.out.println("Invalid Position Exception");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case "indexOf":
@@ -472,7 +472,7 @@ public class List {
                             l.removeAll(a);
                         }
                     } catch (Exception e) {
-                        System.out.println("Invalid Position Exception");
+                        System.out.println(e.getMessage());
                     }
                     break;
                 case "subList":
@@ -487,7 +487,7 @@ public class List {
                             System.out.println(object);
                         }
                     } catch (Exception e) {
-                        System.out.println("Index Out of Bounds Exception");
+                        System.out.println(e.getMessage());
                     }
 
                     break;
