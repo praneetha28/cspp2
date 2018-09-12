@@ -75,13 +75,29 @@ class Show {
 class BookYourShow {
     private List<Show> shows;
     private List<String> tickets;
+    /**.
+     * Constructs the object.
+     */
     public BookYourShow() {
         shows = new List<Show>();
         tickets = new List<String>();
     }
+    /**.
+     * Adds a show.
+     *
+     * @param      s     { parameter_description }
+     */
     public void addAShow(final Show s) {
         shows.add(s);
     }
+    /**.
+     * Gets a show.
+     *
+     * @param      movename  The movename
+     * @param      datetime  The datetime
+     *
+     * @return     A show.
+     */
     public Show getAShow(final String movename,
      final String datetime) {
         for (int i = 0; i < shows.size(); i++) {
