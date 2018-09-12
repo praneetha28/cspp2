@@ -73,8 +73,14 @@ class Show {
  * Class for book your show.
  */
 class BookYourShow {
-    private List<Show> shows;
-    private List<String> tickets;
+    /**.
+     * { var_description }
+     */
+    public List<Show> shows;
+    /**.
+     * { var_description }
+     */
+    public List<String> tickets;
     /**.
      * Constructs the object.
      */
