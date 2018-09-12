@@ -15,22 +15,57 @@ class Patron {
      * { item_description }
      */
     private String name, phoneno;
+    /**.
+     * Constructs the object.
+     *
+     * @param      nme    The nme
+     * @param      phono  The phono
+     */
     public Patron(final String nme, final String phono) {
         this.name = nme;
         this.phoneno = phono;
     }
+    /**.
+     * { function_description }
+     *
+     * @param      name  The name
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String Setname(final String name) {
         return this.name = name;
     }
+    /**.
+     * { function_description }
+     *
+     * @param      phoneno  The phoneno
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String Setphoneno(final String phoneno) {
         return this.phoneno = phoneno;
     }
+    /**.
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String getname() {
         return name;
     }
+    /**.
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String getphoneno() {
         return phoneno;
     }
+    /**.
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return this.getname() + "," + this.getphoneno();
     }
@@ -39,32 +74,89 @@ class Patron {
  * Class for show.
  */
 class Show {
+    /**.
+     * { var_description }
+     */
     private String movename;
+    /**.
+     * { var_description }
+     */
     private String datetime;
+    /**.
+     * { var_description }
+     */
     private String[] seats;
+    /**.
+     * Constructs the object.
+     *
+     * @param      mvnme   The mvnme
+     * @param      dtetme  The dtetme
+     * @param      seat    The seat
+     */
     public Show(final String mvnme, final String dtetme, final String[] seat) {
         this.movename = mvnme;
         this.datetime = dtetme;
         this.seats = seat;
     }
+    /**.
+     * { function_description }
+     *
+     * @param      mvnme  The mvnme
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String Setmovie(final String mvnme) {
         return this.movename = mvnme;
     }
+    /**.
+     * { function_description }
+     *
+     * @param      dtetme  The dtetme
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String Setdatetime(final String dtetme) {
         return this.datetime = dtetme;
     }
+    /**.
+     * { function_description }
+     *
+     * @param      seat  The seat
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String[] Setseat(final String[] seat) {
         return this.seats = seat;
     }
+    /**.
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String getmovie() {
         return this.movename;
     }
+    /**.
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String getdatetime() {
         return this.datetime;
     }
+    /**.
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public String[] getseat() {
         return this.seats;
     }
+    /**.
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         return this.getmovie() + "," + this.getdatetime();
     }
