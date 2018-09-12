@@ -15,14 +15,14 @@ class Patron {
      * { item_description }
      */
     private String name, phoneno;
-    public Patron(String nme, String phono) {
+    public Patron(final String nme, final String phono) {
         this.name = nme;
         this.phoneno = phono;
     }
-    public String Setname(String name) {
+    public String Setname(final String name) {
         return this.name = name;
     }
-    public String Setphoneno(String phoneno) {
+    public String Setphoneno(final String phoneno) {
         return this.phoneno = phoneno;
     }
     public String getname() {
@@ -47,10 +47,10 @@ class Show {
         this.datetime = dtetme;
         this.seats = seat;
     }
-    public String Setmovie(String mvnme) {
+    public String Setmovie(final String mvnme) {
         return this.movename = mvnme;
     }
-    public String Setdatetime(String dtetme) {
+    public String Setdatetime(final String dtetme) {
         return this.datetime = dtetme;
     }
     public String[] Setseat(final String[] seat) {
@@ -69,6 +69,9 @@ class Show {
         return this.getmovie() + "," + this.getdatetime();
     }
 }
+/**.
+ * Class for book your show.
+ */
 class BookYourShow {
     private List<Show> shows;
     private List<String> tickets;
@@ -79,10 +82,12 @@ class BookYourShow {
     public void addAShow(final Show s) {
         shows.add(s);
     }
-    public Show getAShow(final String movename, final String datetime) {
+    public Show getAShow(final String movename,
+     final String datetime) {
         for (int i = 0; i < shows.size(); i++) {
             Show show = shows.get(i);
-            if (show.getmovie().equals(movename) && show.getdatetime().equals(datetime)) {
+            if (show.getmovie().equals(movename)
+             && show.getdatetime().equals(datetime)) {
                 return show;
             }
         }
@@ -96,7 +101,8 @@ class BookYourShow {
      * @param      p         { parameter_description }
      * @param      seats     The seats
      */
-    public void bookAShow(final String movename, final String datetime, final Patron p, final String[] seats) {
+    public void bookAShow(final String movename,
+     final String datetime, final Patron p, final String[] seats) {
         Show show = getAShow(movename, datetime);
         if (show == null) {
             System.out.println("No show");
@@ -123,7 +129,8 @@ class BookYourShow {
      * @param      datetime  The datetime
      * @param      mobile    The mobile
      */
-    public void printTicket(final String movename, final String datetime, final String mobile) {
+    public void printTicket(final String movename,
+     final String datetime, final String mobile) {
         String ticket = mobile + " " + movename + " " + datetime;
         // for (int i = 0;i < tickets.size(); i++) {
         if (tickets.contains(ticket)) {
