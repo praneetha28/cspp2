@@ -121,7 +121,7 @@ class BookYourShow {
         for( int i = 0; i<shows.size(); i++) {
             StringBuffer sb = new StringBuffer();
             Show show = shows.get(i);
-            sb.append(show + ",");
+            sb.append(show + ",[");
             String[] seats = show.getseat();
             for(int j = 0; j < seats.length - 1; j++) {
                 sb.append(seats[j] + ",");
