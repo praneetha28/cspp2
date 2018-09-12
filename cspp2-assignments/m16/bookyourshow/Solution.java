@@ -24,7 +24,7 @@ final class Patron {
      *
      * @return     { description_of_the_return_value }
      */
-    public String SET_N(final String nme) {
+    public String S_E_T_N_A_M_E(final String nme) {
         return nme;
     }
     /**.
