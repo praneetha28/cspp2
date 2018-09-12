@@ -20,26 +20,6 @@ final class Patron {
     /**.
      * { function_description }
      *
-     * @param      nme  The name
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public String Set_NAME$(final String nme) {
-        return nme;
-    }
-    /**.
-     * { function_description }
-     *
-     * @param      phono  The phoneno
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public String Set_Phoneno(final String phono) {
-        return phono;
-    }
-    /**.
-     * { function_description }
-     *
      * @return     { description_of_the_return_value }
      */
     public String getname() {
@@ -90,36 +70,6 @@ final class Show {
         this.movename = mvnme;
         this.datetime = dtetme;
         this.seats = seat;
-    }
-    /**.
-     * { function_description }
-     *
-     * @param      mvnme  The mvnme
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public String Set_Movie(final String mvnme) {
-        return mvnme;
-    }
-    /**.
-     * { function_description }
-     *
-     * @param      dtetme  The dtetme
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public String Set_Date_Time(final String dtetme) {
-        return dtetme;
-    }
-    /**.
-     * { function_description }
-     *
-     * @param      seat  The seat
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public String[] Set_Seat(final String[] seat) {
-        return seat;
     }
     /**.
      * { function_description }
