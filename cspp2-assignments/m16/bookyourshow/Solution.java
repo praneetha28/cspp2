@@ -13,7 +13,7 @@ final class Patron {
      * @param      nme    The nme
      * @param      phono  The phono
      */
-    public Patron(final String nme, final String phono) {
+    protected Patron(final String nme, final String phono) {
         this.name = nme;
         this.phoneno = phono;
     }
@@ -85,7 +85,7 @@ final class Show {
      * @param      dtetme  The dtetme
      * @param      seat    The seat
      */
-    public Show(final String mvnme, final String dtetme, final String[] seat) {
+    protected Show(final String mvnme, final String dtetme, final String[] seat) {
         this.movename = mvnme;
         this.datetime = dtetme;
         this.seats = seat;
