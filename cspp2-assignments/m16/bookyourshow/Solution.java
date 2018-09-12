@@ -24,7 +24,7 @@ final class Patron {
      *
      * @return     { description_of_the_return_value }
      */
-    public final String Set_Name(final String nme) {
+    public String SETNAME(final String nme) {
         return nme;
     }
     /**.
@@ -34,7 +34,7 @@ final class Patron {
      *
      * @return     { description_of_the_return_value }
      */
-    public final String Set_Phoneno(final String phono) {
+    public String Set_Phoneno(final String phono) {
         return phono;
     }
     /**.
@@ -98,7 +98,7 @@ final class Show {
      *
      * @return     { description_of_the_return_value }
      */
-    public final String Set_Movie(final String mvnme) {
+    public String Set_Movie(final String mvnme) {
         return mvnme;
     }
     /**.
@@ -108,7 +108,7 @@ final class Show {
      *
      * @return     { description_of_the_return_value }
      */
-    public final String Set_Date_Time(final String dtetme) {
+    public String Set_Date_Time(final String dtetme) {
         return dtetme;
     }
     /**.
@@ -118,7 +118,7 @@ final class Show {
      *
      * @return     { description_of_the_return_value }
      */
-    public final String[] Set_Seat(final String[] seat) {
+    public String[] Set_Seat(final String[] seat) {
         return seat;
     }
     /**.
