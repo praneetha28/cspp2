@@ -20,7 +20,7 @@ class Patron {
     /**.
      * { function_description }
      *
-     * @param      name  The name
+     * @param      nme  The name
      *
      * @return     { description_of_the_return_value }
      */
@@ -30,7 +30,7 @@ class Patron {
     /**.
      * { function_description }
      *
-     * @param      phoneno  The phoneno
+     * @param      phono  The phoneno
      *
      * @return     { description_of_the_return_value }
      */
