@@ -113,11 +113,9 @@ class BookYourShow {
         for (int i = 0;i < tickets.size(); i++) {
             if (tickets.get(i).equals(ticket)) {
                 System.out.println(tickets.get(i));
-            } else {
-                System.out.println("Invalid");
             }
         }
-
+        // System.out.println("Invalid");
     }
     public void showAll() {
         // for( int i = 0; i<show.size(); i++) {
