@@ -168,7 +168,7 @@ final class BookYourShow {
     /**.
      * Constructs the object.
      */
-    public BookYourShow() {
+    protected BookYourShow() {
         shows = new List<Show>();
         tickets = new List<String>();
     }
