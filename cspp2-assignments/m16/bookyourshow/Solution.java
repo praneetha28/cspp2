@@ -25,7 +25,7 @@ class Patron {
      * @return     { description_of_the_return_value }
      */
     public String Set_Name(final String nme) {
-        return this.name = nme;
+        return nme;
     }
     /**.
      * { function_description }
