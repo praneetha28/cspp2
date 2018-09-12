@@ -110,12 +110,12 @@ class BookYourShow {
     }
     public void printTicket(final String movename, final String datetime, final String mobile) {
         String ticket = mobile + " " + movename + " " + datetime;
-        for (int i = 0;i < tickets.size(); i++) {
-            if (tickets.get(i).equals(ticket)) {
-                System.out.println(tickets.get(i));
-            }
+        // for (int i = 0;i < tickets.size(); i++) {
+        if (tickets.contains(ticket)) {
+                System.out.println(ticket);
+        } else {
+            System.out.println("Invalid");
         }
-        // System.out.println("Invalid");
     }
     public void showAll() {
         // for( int i = 0; i<show.size(); i++) {
