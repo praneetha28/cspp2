@@ -97,7 +97,7 @@ class BookYourShow {
             for(int i = 0; i < showseats.length; i++) {
                 for(int j = 0; j < seats.length; j++) {
                     if(seats[j].equals(showseats[i])) {
-                        showseats[i] = null;
+                        showseats[i] = "N/A";
                     }
                 }
             }
@@ -118,9 +118,17 @@ class BookYourShow {
         }
     }
     public void showAll() {
-        // for( int i = 0; i<shows.size(); i++) {
-        //     System.out.println(shows.get(i).toString() + "," + shows.getseat().replace(" "," ").toString());
-        // }
+        for( int i = 0; i<shows.size(); i++) {
+            StringBuffer sb = new StringBuffer();
+            Show show = shows.get(i);
+            sb.append(show + ",");
+            String[] seats = show.getseat();
+            for(int j = 0; j < seats.length - 1; j++) {
+                sb.append(seats[j] + ",");
+            }
+            sb.append(seats[seats.length-1] + "]");
+            System.out.println(sb.toString());
+        }
     }
 }
 
