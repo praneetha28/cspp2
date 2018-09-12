@@ -1,12 +1,4 @@
-import java.io.BufferedInputStream;
-/**.
- * { item_description }
- */
 import java.util.Scanner;
-/** .
- *  { item_description }
- */
-import java.util.Arrays;
 /**.
  * Class for patron.
  */
@@ -32,7 +24,7 @@ class Patron {
      *
      * @return     { description_of_the_return_value }
      */
-    public String Setname(final String name) {
+    public String Set_name(final String name) {
         return this.name = name;
     }
     /**.
@@ -42,7 +34,7 @@ class Patron {
      *
      * @return     { description_of_the_return_value }
      */
-    public String Setphoneno(final String phoneno) {
+    public String Set_phoneno(final String phoneno) {
         return this.phoneno = phoneno;
     }
     /**.
@@ -105,7 +97,7 @@ class Show {
      *
      * @return     { description_of_the_return_value }
      */
-    public String Setmovie(final String mvnme) {
+    public String Set_movie(final String mvnme) {
         return this.movename = mvnme;
     }
     /**.
@@ -115,7 +107,7 @@ class Show {
      *
      * @return     { description_of_the_return_value }
      */
-    public String Setdatetime(final String dtetme) {
+    public String Set_date_time(final String dtetme) {
         return this.datetime = dtetme;
     }
     /**.
@@ -125,7 +117,7 @@ class Show {
      *
      * @return     { description_of_the_return_value }
      */
-    public String[] Setseat(final String[] seat) {
+    public String[] Set_seat(final String[] seat) {
         return this.seats = seat;
     }
     /**.
@@ -168,11 +160,11 @@ class BookYourShow {
     /**.
      * { var_description }
      */
-    public List<Show> shows;
+    private List<Show> shows;
     /**.
      * { var_description }
      */
-    public List<String> tickets;
+    private List<String> tickets;
     /**.
      * Constructs the object.
      */
