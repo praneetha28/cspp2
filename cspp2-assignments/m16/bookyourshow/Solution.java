@@ -24,8 +24,8 @@ class Patron {
      *
      * @return     { description_of_the_return_value }
      */
-    public String Set_name(final String name) {
-        return this.name = name;
+    public String Set_Name(final String nme) {
+        return this.name = nme;
     }
     /**.
      * { function_description }
@@ -34,8 +34,8 @@ class Patron {
      *
      * @return     { description_of_the_return_value }
      */
-    public String Set_phoneno(final String phoneno) {
-        return this.phoneno = phoneno;
+    public String Set_Phoneno(final String phono) {
+        return this.phoneno = phono;
     }
     /**.
      * { function_description }
@@ -97,7 +97,7 @@ class Show {
      *
      * @return     { description_of_the_return_value }
      */
-    public String Set_movie(final String mvnme) {
+    public String Set_Movie(final String mvnme) {
         return this.movename = mvnme;
     }
     /**.
@@ -107,7 +107,7 @@ class Show {
      *
      * @return     { description_of_the_return_value }
      */
-    public String Set_date_time(final String dtetme) {
+    public String Set_Date_Time(final String dtetme) {
         return this.datetime = dtetme;
     }
     /**.
@@ -117,7 +117,7 @@ class Show {
      *
      * @return     { description_of_the_return_value }
      */
-    public String[] Set_seat(final String[] seat) {
+    public String[] Set_Seat(final String[] seat) {
         return this.seats = seat;
     }
     /**.
