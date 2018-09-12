@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**.
  * Class for patron.
  */
-class Patron {
+final class Patron {
     /**.
      * { item_description }
      */
@@ -65,7 +65,7 @@ class Patron {
 /**.
  * Class for show.
  */
-class Show {
+final class Show {
     /**.
      * { var_description }
      */
@@ -97,7 +97,7 @@ class Show {
      *
      * @return     { description_of_the_return_value }
      */
-    private String Set_Movie(final String mvnme) {
+    public String Set_Movie(final String mvnme) {
         return mvnme;
     }
     /**.
@@ -156,7 +156,7 @@ class Show {
 /**.
  * Class for book your show.
  */
-class BookYourShow {
+final class BookYourShow {
     /**.
      * { var_description }
      */
