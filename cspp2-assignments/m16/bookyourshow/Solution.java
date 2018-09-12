@@ -118,9 +118,9 @@ class BookYourShow {
         }
     }
     public void showAll() {
-        for( int i = 0; i<shows.size(); i++) {
-            System.out.println(shows.get(i).toString());
-        }
+        // for( int i = 0; i<shows.size(); i++) {
+        //     System.out.println(shows.get(i).toString() + "," + shows.getseat().replace(" "," ").toString());
+        // }
     }
 }
 
