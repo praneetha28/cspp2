@@ -76,27 +76,35 @@ class BookYourShow {
         shows = new List<Show>();
         tickets = new List<String>();
     }
-    public void addAShow(Show s) {
+    public void addAShow(final Show s) {
         shows.add(s);
     }
     public Show getAShow(final String movename, final String datetime) {
         for (int i = 0; i < shows.size(); i++) {
             Show show = shows.get(i);
-            if(show.getmovie().equals(movename) && show.getdatetime().equals(datetime)) {
+            if (show.getmovie().equals(movename) && show.getdatetime().equals(datetime)) {
                 return show;
             }
         }
         return null;
     }
+    /**.
+     * { function_description }
+     *
+     * @param      movename  The movename
+     * @param      datetime  The datetime
+     * @param      p         { parameter_description }
+     * @param      seats     The seats
+     */
     public void bookAShow(final String movename, final String datetime, final Patron p, final String[] seats) {
         Show show = getAShow(movename, datetime);
-        if(show == null) {
+        if (show == null) {
             System.out.println("No show");
         } else {
             String[] showseats = show.getseat();
-            for(int i = 0; i < showseats.length; i++) {
-                for(int j = 0; j < seats.length; j++) {
-                    if(seats[j].equals(showseats[i])) {
+            for (int i = 0; i < showseats.length; i++) {
+                for (int j = 0; j < seats.length; j++) {
+                    if (seats[j].equals(showseats[i])) {
                         showseats[i] = "N/A";
                     }
                 }
@@ -108,6 +116,13 @@ class BookYourShow {
             tickets.add(s.toString());
         }
     }
+    /**.
+     * { function_description }
+     *
+     * @param      movename  The movename
+     * @param      datetime  The datetime
+     * @param      mobile    The mobile
+     */
     public void printTicket(final String movename, final String datetime, final String mobile) {
         String ticket = mobile + " " + movename + " " + datetime;
         // for (int i = 0;i < tickets.size(); i++) {
@@ -117,21 +132,26 @@ class BookYourShow {
             System.out.println("Invalid");
         }
     }
+    /**.
+     * Shows all.
+     */
     public void showAll() {
-        for( int i = 0; i<shows.size(); i++) {
+        for (int i = 0; i < shows.size(); i++) {
             StringBuffer sb = new StringBuffer();
             Show show = shows.get(i);
             sb.append(show + ",[");
             String[] seats = show.getseat();
-            for(int j = 0; j < seats.length - 1; j++) {
+            for (int j = 0; j < seats.length - 1; j++) {
                 sb.append(seats[j] + ",");
             }
-            sb.append(seats[seats.length-1] + "]");
+            sb.append(seats[seats.length - 1] + "]");
             System.out.println(sb.toString());
         }
     }
 }
-
+/**.
+ * { item_description }
+ */
 public final class Solution {
     /**
      * Constructs the object.
