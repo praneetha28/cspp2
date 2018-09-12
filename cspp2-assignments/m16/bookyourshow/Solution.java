@@ -97,7 +97,7 @@ class Show {
      *
      * @return     { description_of_the_return_value }
      */
-    public String Set_Movie(final String mvnme) {
+    private String Set_Movie(final String mvnme) {
         return mvnme;
     }
     /**.
