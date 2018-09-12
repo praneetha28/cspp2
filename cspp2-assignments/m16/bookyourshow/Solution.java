@@ -24,7 +24,7 @@ final class Patron {
      *
      * @return     { description_of_the_return_value }
      */
-    public String Set_Name(final String nme) {
+    public String SET_N(final String nme) {
         return nme;
     }
     /**.
@@ -85,7 +85,8 @@ final class Show {
      * @param      dtetme  The dtetme
      * @param      seat    The seat
      */
-    protected Show(final String mvnme, final String dtetme, final String[] seat) {
+    protected Show(final String mvnme,
+     final String dtetme, final String[] seat) {
         this.movename = mvnme;
         this.datetime = dtetme;
         this.seats = seat;
