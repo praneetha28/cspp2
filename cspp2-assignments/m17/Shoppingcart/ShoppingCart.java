@@ -6,9 +6,9 @@ import java.util.Scanner;
  * Class for item.
  */
 class Item {
-	/**.
-	 * { var_description }
-	 */
+    /**.
+     * { var_description }
+     */
     private String productname;
     /**.
      * { var_description }
@@ -23,7 +23,7 @@ class Item {
      *
      * @param      name   The name
      * @param      qnt    The qnt
-     * @param      price  The price
+     * @param      prce  The price
      */
     Item(final String name, final int qnt, final float prce) {
         this.productname = name;
@@ -76,7 +76,8 @@ class Item {
      * @return     String representation of the object.
      */
     public String toString() {
-        return this.getproductname() + " " + this.getquantity() + " " + this.getPrice();
+        return this.getproductname() + " " + this.getquantity()
+        + " " + this.getPrice();
     }
     /**.
      * { function_description }
@@ -87,17 +88,25 @@ class Item {
      */
     @Override
     public boolean equals(final Object item) {
-        Item myItem = (Item)item;
+        Item myItem = (Item) item;
         return this.getproductname().equals(myItem.getproductname());
+    }
+    /**.
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int hashCode() {
+        return this.hashCode();
     }
 }
 /**.
  * { item_description }
  */
 public final class ShoppingCart {
-	/**.
-	 * { var_description }
-	 */
+    /**.
+     * { var_description }
+     */
     private List<Item> catalog;
     /**.
      * { var_description }
@@ -142,14 +151,17 @@ public final class ShoppingCart {
 
         Item cartItem = cart.get(index);
         if (cartItem != null) {
-            cartItem.setquantity(cartItem.getquantity() + item.getquantity());
-            catalogItem.setquantity(catalogItem.getquantity() - item.getquantity());
+            cartItem.setquantity(cartItem.getquantity() +
+                item.getquantity());
+            catalogItem.setquantity(catalogItem.getquantity()
+             - item.getquantity());
             return;
         }
         if (catalogItem.getquantity() >= item.getquantity()) {
             item.setPrice(catalogItem.getPrice());
             cart.add(item);
-            catalogItem.setquantity(catalogItem.getquantity() - item.getquantity());
+            catalogItem.setquantity(catalogItem.getquantity()
+             - item.getquantity());
         }
     }
     /**.
@@ -168,8 +180,10 @@ public final class ShoppingCart {
             if (cartItem.getquantity() == item.getquantity()) {
                 cart.remove(index);
             } else {
-                cartItem.setquantity(cartItem.getquantity() - item.getquantity());
-                catalogItem.setquantity(catalogItem.getquantity() + item.getquantity());
+                cartItem.setquantity(cartItem.getquantity()
+                 - item.getquantity());
+                catalogItem.setquantity(catalogItem.getquantity()
+                 + item.getquantity());
             }
         }
     }
@@ -180,7 +194,8 @@ public final class ShoppingCart {
         for (int i = 0; i < cart.size(); i++) {
             Item item = cart.get(i);
             // System.out.println(item);
-            System.out.println(item.getproductname() + " " + item.getquantity());
+            System.out.println(item.getproductname() + " " +
+             item.getquantity());
         }
     }
     /**.
@@ -200,7 +215,8 @@ public final class ShoppingCart {
         float totalAmount = 0.0f;
         for (int i = 0; i < cart.size(); i++) {
             Item item = cart.get(i);
-            totalAmount = totalAmount + item.getquantity() * item.getPrice();
+            totalAmount = totalAmount + item.getquantity()
+             * item.getPrice();
         }
         return totalAmount;
     }
