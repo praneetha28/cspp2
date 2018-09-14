@@ -26,7 +26,7 @@ final class Item {
     public String toString() {
         return this.getproductname() + " " + this.getquantity() + " " + this.getprice();
     }
-    public void setunitPrice(final float prce) {
+    public void setprice(final float prce) {
         this.price = prce;
     }
     @Override
@@ -50,7 +50,7 @@ public final class ShoppingCart {
     private static final float value2 = 0.2f;
     private static final float value3 = 0.3f;
     private static final float value4 = 0.5f;
-    private ShoppingCart() {
+    public ShoppingCart() {
         catalog = new List<Item>();
         cart = new List<Item>();
         isCouponApplied = false;
@@ -61,19 +61,38 @@ public final class ShoppingCart {
             catalog.add(i);
         }
     }
-    public void addToCart(Item c) {
-        int index = catalog.indexOf(c);
-        Item catalogitem = catalog.get(index);
-        index = cart.indexOf(c);
-        Item cartitem = cart.get(index);
-        if(cartitem != null) {
-
+    public void addToCart(Item item) {
+        int index = catalog.indexOf(item);
+        Item catalogItem = catalog.get(index);
+        index = cart.indexOf(item);
+        Item cartItem = cart.get(index);
+        if (cartItem != null) {
+            cartItem.setquantity(cartItem.getquantity() + item.getquantity());
+            catalogItem.setquantity(catalogItem.getquantity()
+                - item.getquantity());
+            return;
+        }
+        if (catalogItem.getquantity() >= item.getquantity()) {
+            item.setprice(catalogItem.getprice());
+            cart.add(item);
+            catalogItem.setquantity(catalogItem.getquantity()
+                - item.getquantity());
         }
     }
-    public void removeFromCart(Item c) {
-        for (int i = 0; i < catalog.size(); i++ ) {
-            if(c.getproductname().equals(catalog.get(i).getproductname())) {
-                cart.get(i).setquantity(c.getquantity());
+    public void removeFromCart(Item item) {
+        int index = catalog.indexOf(item);
+        Item catalogItem = catalog.get(index);
+        index = cart.indexOf(item);
+        Item cartItem = cart.get(index);
+
+        if (cartItem != null) {
+            if (cartItem.getquantity() == item.getquantity()) {
+                cart.remove(index);
+            } else {
+                cartItem.setquantity(cartItem.getquantity()
+                    - item.getquantity());
+                catalogItem.setquantity(catalogItem.getquantity()
+                    + item.getquantity());
             }
         }
     }
