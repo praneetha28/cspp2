@@ -1,88 +1,39 @@
-/**.
- * { item_description }
- */
 import java.util.Scanner;
-/**.
- * Class for item.
- */
+
 class Item {
-    /**.
-     * { var_description }
-     */
     private String pname;
-    /**.
-     * { var_description }
-     */
     private int quantity;
-    /**.
-     * { var_description }
-     */
     private float unitprice;
-    /**
-     * Constructs the object.
-     */
+
     Item() {
-    /**
-     * { item_description }
-     */
+
     }
-    /**.
-     * Constructs the object.
-     *
-     * @param      name   The name
-     * @param      qnt    The qnt
-     * @param      price  The price
-     */
+
     Item(final String name, final int qnt, final float price) {
         this.pname = name;
         this.quantity = qnt;
         this.unitprice = price;
     }
-    /**.
-     * { function_description }
-     *
-     * @return     { description_of_the_return_value }
-     */
+
     public String getpname() {
         return pname;
     }
-    /**.
-     * { function_description }
-     *
-     * @return     { description_of_the_return_value }
-     */
+
     public int getquantity() {
         return quantity;
     }
-    /**.
-     * { function_description }
-     *
-     * @param      qnt   The qnt
-     */
+
     public void setquantity(final int qnt) {
         this.quantity = qnt;
     }
-    /**.
-     * { function_description }
-     *
-     * @return     { description_of_the_return_value }
-     */
+
     public float getunitPrice() {
         return unitprice;
     }
-    /**.
-     * { function_description }
-     *
-     * @param      price  The price
-     */
     public void setunitPrice(final float price) {
         this.unitprice = price;
     }
-    /**.
-     * Returns a string representation of the object.
-     *
-     * @return     String representation of the object.
-     */
+
     public String toString() {
         return this.getpname() + " " + this.getquantity() + " " + this.getunitPrice();
     }
@@ -93,64 +44,26 @@ class Item {
         return this.getpname().equals(myItem.getpname());
     }
 }
-/**.
- * Class for shopping cartesian.
- */
-class ShoppingCart {
-    /**.
-     * { var_description }
-     */
+public final class ShoppingCart {
     private List<Item> catalog;
-    /**.
-     * { var_description }
-     */
     private List<Item> cart;
-    /**.
-     * { var_description }
-     */
-    private float couponCode;
-    /**.
-     * { var_description }
-     */
-    private boolean isCouponApplied;
-    /**.
-     * Constructs the object.
-     */
-    private static final float value1 = 0.1f;
-    private static final float value2 = 0.2f;
-    private static final float value3 = 0.3f;
-    private static final float value4 = 0.5f;
+    float couponCode;
+    boolean isCouponApplied;
+
     ShoppingCart() {
-        /**.
-         * { item_description }
-         */
         catalog = new List<Item>();
-        /**.
-         * { item_description }
-         */
         cart = new List<Item>();
-        /**.
-         * { item_description }
-         */
         isCouponApplied = false;
     }
 
-    /**.
-     * Adds to catalog.
-     *
-     * @param      item  The item
-     */
+
     public void addToCatalog(final Item item) {
         int index = catalog.indexOf(item);
         if (index == -1) {
             catalog.add(item);
         }
     }
-    /**.
-     * Adds to cartesian.
-     *
-     * @param      item  The item
-     */
+
     public void addToCart(final Item item) {
         int index = catalog.indexOf(item);
         Item catalogItem = catalog.get(index);
@@ -159,22 +72,16 @@ class ShoppingCart {
         Item cartItem = cart.get(index);
         if (cartItem != null) {
             cartItem.setquantity(cartItem.getquantity() + item.getquantity());
-            catalogItem.setquantity(catalogItem.getquantity()
-                - item.getquantity());
+            catalogItem.setquantity(catalogItem.getquantity() - item.getquantity());
             return;
         }
         if (catalogItem.getquantity() >= item.getquantity()) {
             item.setunitPrice(catalogItem.getunitPrice());
             cart.add(item);
-            catalogItem.setquantity(catalogItem.getquantity()
-                - item.getquantity());
+            catalogItem.setquantity(catalogItem.getquantity() - item.getquantity());
         }
     }
-    /**.
-     * Removes a from cartesian.
-     *
-     * @param      item  The item
-     */
+
     public void removeFromCart(final Item item) {
         int index = catalog.indexOf(item);
         Item catalogItem = catalog.get(index);
@@ -186,10 +93,8 @@ class ShoppingCart {
             if (cartItem.getquantity() == item.getquantity()) {
                 cart.remove(index);
             } else {
-                cartItem.setquantity(cartItem.getquantity()
-                    - item.getquantity());
-                catalogItem.setquantity(catalogItem.getquantity()
-                    + item.getquantity());
+                cartItem.setquantity(cartItem.getquantity() - item.getquantity());
+                catalogItem.setquantity(catalogItem.getquantity() + item.getquantity());
             }
         }
         // for (Item cartitem : cart) {
@@ -201,9 +106,7 @@ class ShoppingCart {
         //     }
         // }
     }
-    /**.
-     * Shows the cartesian.
-     */
+
     public void showCart() {
         for (int i = 0; i < cart.size(); i++) {
             Item item = cart.get(i);
@@ -211,33 +114,23 @@ class ShoppingCart {
             System.out.println(item.getpname() + " " + item.getquantity());
         }
     }
-    /**.
-     * Shows the catalog.
-     */
     public void showCatalog() {
         for (int i = 0; i < catalog.size(); i++) {
             System.out.println(catalog.get(i));
+            //Item item = catalog.get(i);
+            //System.out.println(item.getpname() + " " + item.getquantity() + " " + item.getunitPrice());
         }
     }
-    /**.
-     * Gets the total amount.
-     *
-     * @return     The total amount.
-     */
+
     public float getTotalAmount() {
         float totalAmount = 0.0f;
         for (int i = 0; i < cart.size(); i++) {
             Item item = cart.get(i);
-            totalAmount = totalAmount +
-            item.getquantity() * item.getunitPrice();
+            totalAmount = totalAmount + item.getquantity() * item.getunitPrice();
         }
         return totalAmount;
     }
-    /**.
-     * Gets the payable amount.
-     *
-     * @return     The payable amount.
-     */
+
     public float getPayableAmount() {
         float totalAmount = getTotalAmount();
         float disc = totalAmount * couponCode;
@@ -245,13 +138,9 @@ class ShoppingCart {
         float payableAmount = totalAmount + (totalAmount * 0.15f);
         return payableAmount;
     }
-    /**.
-     * { function_description }
-     *
-     * @param      coupon  The coupon
-     */
+
     public void applyCoupon(final String coupon) {
-        if (isCouponApplied) {
+        if (isCouponApplied == false) {
             if (coupon.equals("IND10")) {
             couponCode = 0.1f;
             } else if (coupon.equals("IND20")) {
@@ -267,28 +156,26 @@ class ShoppingCart {
             isCouponApplied = true;
         }
     }
-    /**.
-     * { function_description }
-     */
+
     public void printInvoice() {
         System.out.println("Name   quantity   Price");
         for (int i = 0; i < cart.size(); i++) {
             System.out.println(cart.get(i));
         }
         System.out.println("Total:" + getTotalAmount());
-        if (!isCouponApplied) {
+        if (isCouponApplied == true) {
             float totalAmount = getTotalAmount();
             float disc = totalAmount * couponCode;
             System.out.println("Disc%:" + disc);
             totalAmount = totalAmount - disc;
-            float tax = totalAmount * 0.5f;
+            float tax = (totalAmount * 15) / 100;
             System.out.println("Tax:" + tax);
             totalAmount = totalAmount + tax;
             System.out.println("Payable amount: " + totalAmount);
         } else {
             float totalAmount = getTotalAmount();
             System.out.println("Disc%:" + 0.0);
-            float tax = totalAmount * 0.5f;
+            float tax = (totalAmount * 15) / 100;
             System.out.println("Tax:" + tax);
             totalAmount = totalAmount + tax;
             System.out.println("Payable amount: " + totalAmount);
@@ -354,3 +241,4 @@ class ShoppingCart {
         }
     }
 }
+
