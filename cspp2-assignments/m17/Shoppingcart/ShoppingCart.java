@@ -109,7 +109,8 @@ public final class ShoppingCart {
     public float getTotalAmount() {
         float amount = 0.0f;
         for (int i = 0; i < cart.size(); i++ ) {
-            amount += cart.get(i).getquantity() * catalog.get(i).getprice();
+            Item item = cart.get(i);
+            amount = amount + item.getquantity() * item.getprice();
         }
         return amount;
     }
@@ -144,20 +145,21 @@ public final class ShoppingCart {
         }
         System.out.println("Total:" + getTotalAmount());
         if (!isCouponApplied) {
-            float amount = getTotalAmount();
-            float disc = amount * couponCode;
+            float totalAmount = getTotalAmount();
+            float disc = totalAmount * couponCode;
             System.out.println("Disc%:" + disc);
-            float tax = (amount - disc) * 0.5f;
+            totalAmount = totalAmount - disc;
+            float tax = totalAmount * 0.5f;
             System.out.println("Tax:" + tax);
-            amount = amount + tax;
-            System.out.println("Payable amount:" + amount);
+            totalAmount = totalAmount + tax;
+            System.out.println("Payable amount: " + totalAmount);
         } else {
-            float amount = getTotalAmount();
+            float totalAmount = getTotalAmount();
             System.out.println("Disc%:" + 0.0);
-            float tax = amount * 0.5f;
+            float tax = totalAmount * 0.5f;
             System.out.println("Tax:" + tax);
-            amount = amount + tax;
-            System.out.println("Payable amount:" + amount);
+            totalAmount = totalAmount + tax;
+            System.out.println("Payable amount: " + totalAmount);
         }
     }
     public static void main(final String[] args) {
