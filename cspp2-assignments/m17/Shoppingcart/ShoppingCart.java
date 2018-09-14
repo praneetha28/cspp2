@@ -123,19 +123,31 @@ public final class ShoppingCart {
     /**.
      * { var_description }
      */
-    private static final float value = 0.1f;
+    private static final float V_1 = 0.1f;
     /**.
      * { var_description }
      */
-    private static final float value1 = 0.2f;
+    private static final float V_2 = 0.2f;
     /**.
      * { var_description }
      */
-    private static final float value2 = 0.3f;
+    private static final float V_3 = 0.3f;
     /**.
      * { var_description }
      */
-    private static final float value3 = 0.5f;
+    private static final float V_4 = 0.5f;
+    /**.
+     * { var_description }
+     */
+    private static final float V_5 = 0.15f;
+    /**.
+     * { var_description }
+     */
+    private static final int V_6 = 15;
+    /**.
+     * { var_description }
+     */
+    private static final int V_7 = 100;
     /**.
      * Constructs the object.
      */
@@ -245,7 +257,7 @@ public final class ShoppingCart {
         float totalAmount = getTotalAmount();
         float disc = totalAmount * couponCode;
         totalAmount = totalAmount - disc;
-        float payableAmount = totalAmount + (totalAmount * 0.15f);
+        float payableAmount = totalAmount + (totalAmount * V_5);
         return payableAmount;
     }
     /**.
@@ -256,13 +268,13 @@ public final class ShoppingCart {
     public void applyCoupon(final String coupon) {
         if (!isCouponApplied) {
             if (coupon.equals("IND10")) {
-            couponCode = value;
+            couponCode = V_1;
             } else if (coupon.equals("IND20")) {
-                couponCode = value1;
+                couponCode = V_2;
             } else if (coupon.equals("IND30")) {
-                couponCode = value2;
+                couponCode = V_3;
             } else if (coupon.equals("IND50")) {
-                couponCode = value3;
+                couponCode = V_4;
             } else {
                 System.out.println("Invalid coupon");
                 return;
@@ -284,14 +296,14 @@ public final class ShoppingCart {
             float disc = totalAmount * couponCode;
             System.out.println("Disc%:" + disc);
             totalAmount = totalAmount - disc;
-            float tax = (totalAmount * 15) / 100;
+            float tax = (totalAmount * V_6) / V_7;
             System.out.println("Tax:" + tax);
             totalAmount = totalAmount + tax;
             System.out.println("Payable amount: " + totalAmount);
         } else {
             float totalAmount = getTotalAmount();
             System.out.println("Disc%:" + 0.0);
-            float tax = (totalAmount * 15) / 100;
+            float tax = (totalAmount * V_6) / V_7;
             System.out.println("Tax:" + tax);
             totalAmount = totalAmount + tax;
             System.out.println("Payable amount: " + totalAmount);
