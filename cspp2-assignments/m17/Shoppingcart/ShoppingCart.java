@@ -1,69 +1,140 @@
+/**.
+ * { item_description }
+ */
 import java.util.Scanner;
-
+/**.
+ * Class for item.
+ */
 class Item {
-    private String pname;
+	/**.
+	 * { var_description }
+	 */
+    private String productname;
+    /**.
+     * { var_description }
+     */
     private int quantity;
-    private float unitprice;
-
-    Item() {
-
-    }
-
-    Item(final String name, final int qnt, final float price) {
-        this.pname = name;
+    /**.
+     * { var_description }
+     */
+    private float price;
+    /**.
+     * Constructs the object.
+     *
+     * @param      name   The name
+     * @param      qnt    The qnt
+     * @param      price  The price
+     */
+    Item(final String name, final int qnt, final float prce) {
+        this.productname = name;
         this.quantity = qnt;
-        this.unitprice = price;
+        this.price = prce;
     }
-
-    public String getpname() {
-        return pname;
+    /**.
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public String getproductname() {
+        return productname;
     }
-
+    /**.
+     * { function_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public int getquantity() {
         return quantity;
     }
-
+    /**.
+     * { function_description }
+     *
+     * @param      qnt   The qnt
+     */
     public void setquantity(final int qnt) {
         this.quantity = qnt;
     }
-
-    public float getunitPrice() {
-        return unitprice;
+    /**.
+     * Gets the price.
+     *
+     * @return     The price.
+     */
+    public float getPrice() {
+        return price;
     }
-    public void setunitPrice(final float price) {
-        this.unitprice = price;
+    /**.
+     * Sets the price.
+     *
+     * @param      prce  The prce
+     */
+    public void setPrice(final float prce) {
+        this.price = prce;
     }
-
+    /**.
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
-        return this.getpname() + " " + this.getquantity() + " " + this.getunitPrice();
+        return this.getproductname() + " " + this.getquantity() + " " + this.getPrice();
     }
-
+    /**.
+     * { function_description }
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
     @Override
     public boolean equals(final Object item) {
         Item myItem = (Item)item;
-        return this.getpname().equals(myItem.getpname());
+        return this.getproductname().equals(myItem.getproductname());
     }
 }
+/**.
+ * { item_description }
+ */
 public final class ShoppingCart {
+	/**.
+	 * { var_description }
+	 */
     private List<Item> catalog;
+    /**.
+     * { var_description }
+     */
     private List<Item> cart;
-    float couponCode;
-    boolean isCouponApplied;
-
+    /**.
+     * { var_description }
+     */
+    private float couponCode;
+    /**.
+     * { var_description }
+     */
+    private boolean isCouponApplied;
+    /**.
+     * Constructs the object.
+     */
     ShoppingCart() {
         catalog = new List<Item>();
         cart = new List<Item>();
         isCouponApplied = false;
     }
-
-
+    /**.
+     * Adds to catalog.
+     *
+     * @param      item  The item
+     */
     public void addToCatalog(final Item item) {
         int index = catalog.indexOf(item);
         if (index == -1) {
             catalog.add(item);
         }
     }
-
+    /**.
+     * Adds to cartesian.
+     *
+     * @param      item  The item
+     */
     public void addToCart(final Item item) {
         int index = catalog.indexOf(item);
         Item catalogItem = catalog.get(index);
@@ -76,12 +147,16 @@ public final class ShoppingCart {
             return;
         }
         if (catalogItem.getquantity() >= item.getquantity()) {
-            item.setunitPrice(catalogItem.getunitPrice());
+            item.setPrice(catalogItem.getPrice());
             cart.add(item);
             catalogItem.setquantity(catalogItem.getquantity() - item.getquantity());
         }
     }
-
+    /**.
+     * Removes a from cartesian.
+     *
+     * @param      item  The item
+     */
     public void removeFromCart(final Item item) {
         int index = catalog.indexOf(item);
         Item catalogItem = catalog.get(index);
@@ -97,40 +172,43 @@ public final class ShoppingCart {
                 catalogItem.setquantity(catalogItem.getquantity() + item.getquantity());
             }
         }
-        // for (Item cartitem : cart) {
-        //     if ((cartitem.getpname()).equals(item.getpname())) {
-        //         int a = cartitem.getquantity();
-        //         int b = item.getquantity();
-        //         int c = a - b;
-        //         cartitem.setquantity(c);
-        //     }
-        // }
     }
-
+    /**.
+     * Shows the cartesian.
+     */
     public void showCart() {
         for (int i = 0; i < cart.size(); i++) {
             Item item = cart.get(i);
             // System.out.println(item);
-            System.out.println(item.getpname() + " " + item.getquantity());
+            System.out.println(item.getproductname() + " " + item.getquantity());
         }
     }
+    /**.
+     * Shows the catalog.
+     */
     public void showCatalog() {
         for (int i = 0; i < catalog.size(); i++) {
             System.out.println(catalog.get(i));
-            //Item item = catalog.get(i);
-            //System.out.println(item.getpname() + " " + item.getquantity() + " " + item.getunitPrice());
         }
     }
-
+    /**.
+     * Gets the total amount.
+     *
+     * @return     The total amount.
+     */
     public float getTotalAmount() {
         float totalAmount = 0.0f;
         for (int i = 0; i < cart.size(); i++) {
             Item item = cart.get(i);
-            totalAmount = totalAmount + item.getquantity() * item.getunitPrice();
+            totalAmount = totalAmount + item.getquantity() * item.getPrice();
         }
         return totalAmount;
     }
-
+    /**.
+     * Gets the payable amount.
+     *
+     * @return     The payable amount.
+     */
     public float getPayableAmount() {
         float totalAmount = getTotalAmount();
         float disc = totalAmount * couponCode;
@@ -138,7 +216,11 @@ public final class ShoppingCart {
         float payableAmount = totalAmount + (totalAmount * 0.15f);
         return payableAmount;
     }
-
+    /**.
+     * { function_description }
+     *
+     * @param      coupon  The coupon
+     */
     public void applyCoupon(final String coupon) {
         if (isCouponApplied == false) {
             if (coupon.equals("IND10")) {
@@ -156,7 +238,9 @@ public final class ShoppingCart {
             isCouponApplied = true;
         }
     }
-
+    /**.
+     * { function_description }
+     */
     public void printInvoice() {
         System.out.println("Name   quantity   Price");
         for (int i = 0; i < cart.size(); i++) {
