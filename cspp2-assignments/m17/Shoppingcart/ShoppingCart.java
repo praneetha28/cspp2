@@ -121,6 +121,22 @@ public final class ShoppingCart {
      */
     private boolean isCouponApplied;
     /**.
+     * { var_description }
+     */
+    private static final float value = 0.1f;
+    /**.
+     * { var_description }
+     */
+    private static final float value1 = 0.2f;
+    /**.
+     * { var_description }
+     */
+    private static final float value2 = 0.3f;
+    /**.
+     * { var_description }
+     */
+    private static final float value3 = 0.5f;
+    /**.
      * Constructs the object.
      */
     ShoppingCart() {
@@ -151,8 +167,8 @@ public final class ShoppingCart {
 
         Item cartItem = cart.get(index);
         if (cartItem != null) {
-            cartItem.setquantity(cartItem.getquantity() +
-                item.getquantity());
+            cartItem.setquantity(cartItem.getquantity()
+                + item.getquantity());
             catalogItem.setquantity(catalogItem.getquantity()
              - item.getquantity());
             return;
@@ -194,8 +210,8 @@ public final class ShoppingCart {
         for (int i = 0; i < cart.size(); i++) {
             Item item = cart.get(i);
             // System.out.println(item);
-            System.out.println(item.getproductname() + " " +
-             item.getquantity());
+            System.out.println(item.getproductname() + " "
+                + item.getquantity());
         }
     }
     /**.
@@ -238,15 +254,15 @@ public final class ShoppingCart {
      * @param      coupon  The coupon
      */
     public void applyCoupon(final String coupon) {
-        if (isCouponApplied == false) {
+        if (!isCouponApplied) {
             if (coupon.equals("IND10")) {
-            couponCode = 0.1f;
+            couponCode = value;
             } else if (coupon.equals("IND20")) {
-                couponCode = 0.2f;
+                couponCode = value1;
             } else if (coupon.equals("IND30")) {
-                couponCode = 0.3f;
+                couponCode = value2;
             } else if (coupon.equals("IND50")) {
-                couponCode = 0.5f;
+                couponCode = value3;
             } else {
                 System.out.println("Invalid coupon");
                 return;
@@ -263,7 +279,7 @@ public final class ShoppingCart {
             System.out.println(cart.get(i));
         }
         System.out.println("Total:" + getTotalAmount());
-        if (isCouponApplied == true) {
+        if (isCouponApplied) {
             float totalAmount = getTotalAmount();
             float disc = totalAmount * couponCode;
             System.out.println("Disc%:" + disc);
