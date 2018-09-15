@@ -154,15 +154,15 @@ public final class Solution {
         } else {
         	System.out.println("Error! Malformed question");
         }
-        List<Question> question = new List<Question>();
-        while (s.hasNext()) {
-            String line = s.nextLine();
-            String[] array = line.split(":");
-            question.add(new Question(array[0], array[1],
-             Integer.parseInt(array[2]), Integer.parseInt(array[3]),
-              Integer.parseInt(array[4])));
-        }
-        System.out.println(questionCount + "are added to the quiz");
+        // List<Question> question = new List<Question>();
+        // while (s.hasNext()) {
+        //     String line = s.nextLine();
+        //     String[] array = line.split(":");
+        //     question.add(new Question(array[0], array[1],
+        //      Integer.parseInt(array[2]), Integer.parseInt(array[3]),
+        //       Integer.parseInt(array[4])));
+        // }
+        // System.out.println(questionCount + "are added to the quiz");
     }
 
     /**
