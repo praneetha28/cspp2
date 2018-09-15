@@ -58,7 +58,8 @@ class Question {
      */
     public String getchoices() {
         String[] c = choices.split(",");
-        return c[0] + "    " + c[1] + "    " + c[2] + "    " + c[3];
+        int i = 0;
+        return c[i] + "    " + c[i + 1] + "    " + c[i + 2] + "    " + c[i + 3];
     }
     /**.
      * { function_description }
