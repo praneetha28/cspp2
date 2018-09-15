@@ -173,12 +173,11 @@ public final class Solution {
         // store the user respones in the quiz object
         System.out.println(quiz.getquizname());
         System.out.println(quiz.getchoices());
-        for(int i = 0; i < answerCount; i++) {
+        for (int i = 0; i < answerCount; i++) {
             String res = s.nextLine();
         }
     }
-
-    /**
+    /**.
      * Displays the score report
      *
      * @param      quiz     The quiz object
