@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class Quiz {
+class Question {
     /**.
      * { var_description }
      */
@@ -7,7 +7,7 @@ class Quiz {
     /**.
      * { var_description }
      */
-    private String[] choices;
+    private String choices;
     /**.
      * { var_description }
      */
@@ -15,10 +15,7 @@ class Quiz {
     private int maxmarks;
     private int penalty;
     // private List<Quiz> question;
-    Quiz() {
-    	// question = new List<Quiz>();
-    }
-    Quiz(final String qname, final String[] choice, final int answer, final int marks, final int penlty) {
+    Question(final String qname, final String choice, final int answer, final int marks, final int penlty) {
         this.quizname = qname;
         this.choices = choice;
         this.crctanswr = answer;
@@ -28,8 +25,9 @@ class Quiz {
     public String getquizname() {
         return quizname;
     }
-    public String[] getchoices() {
-        return choices;
+    public String getchoices() {
+        String[] c = choices.split(",");
+        return c[0] + "    " + c[1] + "    " + c[2] + "    " + c[3];
     }
     public int getcrctanswr() {
         return crctanswr;
@@ -81,12 +79,12 @@ public final class Solution {
                 System.out.println("|------------|");
                 startQuiz(s, q, Integer.parseInt(tokens[1]));
                 break;
-                // case "SCORE_REPORT":
-                // System.out.println("|--------------|");
-                // System.out.println("| Score Report |");
-                // System.out.println("|--------------|");
-                // displayScore(q);
-                // break;
+                case "SCORE_REPORT":
+                System.out.println("|--------------|");
+                System.out.println("| Score Report |");
+                System.out.println("|--------------|");
+                displayScore(q);
+                break;
                 default:
                 break;
             }
@@ -103,12 +101,11 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        List<Quiz> question = new List<Quiz>();
+        List<Question> question = new List<Question>();
         while (s.hasNext()) {
             String line = s.nextLine();
-        	String array[] = line.split(":");
-        	String array1[] = array[1].split(",");
-        	question.add(new Quiz(array[0], array1, Integer.parseInt(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4])));
+        	String[] array = line.split(":");
+        	question.add(new Question(array[0], array[1], Integer.parseInt(array[2]), Integer.parseInt(array[3]), Integer.parseInt(array[4])));
         }
         System.out.println(questionCount + "are added to the quiz");
     }
@@ -138,6 +135,12 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
+        System.out.println(quiz.getquizname());
+        // for(int i = 0; i < quiz.size(); i++) {
+        //     if(quiz.get(i).equals(question.getcrctanswr())) {
+        //         System.out.println("Correct Answer! - Marks Awarded" + quiz.getmaxmarks());
+        //     }
+        // }
 
     }
 }
