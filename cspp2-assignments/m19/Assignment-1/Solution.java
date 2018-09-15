@@ -177,11 +177,11 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
-        System.out.println(quiz.getquizname());
-        System.out.println(quiz.getchoices());
-        for (int i = 0; i < answerCount; i++) {
-            String res = s.nextLine();
-        }
+        // System.out.println(quiz.getquizname());
+        // System.out.println(quiz.getchoices());
+        // for (int i = 0; i < answerCount; i++) {
+        //     String res = s.nextLine();
+        // }
     }
     /**.
      * Displays the score report
@@ -190,7 +190,7 @@ public final class Solution {
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
-        System.out.println(quiz.getquizname());
+        // System.out.println(quiz.getquizname());
         // for(int i = 0; i < quiz.size(); i++) {
         //     if(quiz.get(i).equals(question.getcrctanswr())) {
         //         System.out.println("Correct Answer! - Marks Awarded"
