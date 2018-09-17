@@ -180,8 +180,9 @@ class Quiz {
             String[] array = line.split(":");
             String[] answers = array[1].split(",");
             // System.out.println(array[0]);
-            if ( array[4] == " ") {
-        		throw new Exception("Error! Malformed question");
+            // System.out.println(array[1]);
+            if (array[0].equals("") || array[1].equals("") || array[2].equals("") || array[3].equals("") || array[4].equals("")) {
+        		System.out.println("Error! Malformed question");
         	}
             if (answers.length < 2) {
         		throw new Exception(array[0] + " does not have enough answer choices");
@@ -194,7 +195,7 @@ class Quiz {
         	}
         	if (Integer.parseInt(array[4]) > 0) {
         		throw new Exception("Inavlid penalty for " + array[0]);
-        	}
+	       	}
         	quiz.addQuestion(new Question(array[0], answers,
              Integer.parseInt(array[2]), Integer.parseInt(array[3]),
               Integer.parseInt(array[4])));
@@ -222,11 +223,11 @@ class Quiz {
             System.out.println(question.get(i).choices[j]);
             System.out.println();
         }
-        // for (int i = 0; i < question.size(); i++) {
-        // 	String line = scan.nextLine();
-        // 	String[] key = line.split(" ");
-        // 	question.get(i).;
-        // }
+        for (int i = 0; i < question.size(); i++) {
+        	String line = scan.nextLine();
+        	String[] key = line.split(" ");
+        	question.get(i).setResponse(key[1]);
+        }
     }
     /**
      * Displays the score report.
