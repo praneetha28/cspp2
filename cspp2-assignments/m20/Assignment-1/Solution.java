@@ -203,17 +203,17 @@ class Quiz {
                                      Integer.parseInt(array[3]),
                                     Integer.parseInt(array[4])));
                             } else {
-                                throw new Exception
-                                ("Invalid penalty for " + array[0]);
+                                throw new Exception(
+                                    "Invalid penalty for " + array[0]);
                             }
                         } else {
-                            throw new Exception
-                            ("Invalid max marks for " + array[0]);
+                            throw new Exception(
+                                "Invalid max marks for " + array[0]);
                         }
                     } else {
                         throw new Exception("Error! Correct answer "
-                            +"choice number is out of"
-                            +" range for " + array[0]);
+                            + "choice number is out of"
+                            + " range for " + array[0]);
                     }
                 } else {
                     throw new Exception(array[0] + " does not have"
@@ -234,7 +234,7 @@ class Quiz {
      * @param      q     The answer count
      */
     public void startQuiz(final Scanner scan,
-        final Quiz quiz, int q) {
+        final Quiz quiz, final int q) {
         // write your code here to display the quiz questions on the console.
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
@@ -242,7 +242,7 @@ class Quiz {
             System.out.println(question.get(i).getQuestionText()
              + "(" + question.get(i).getMaxMarks() + ")");
             int j = 0;
-            for(  j = 0; j < question.get(i).choices.length - 1; j++ ) {
+            for (j = 0; j < question.get(i).choices.length - 1; j++) {
             	System.out.print(question.get(i).choices[j] + "\t");
             }
             System.out.println(question.get(i).choices[j]);
@@ -262,14 +262,14 @@ class Quiz {
         if (question.size() > 0) {
             for (int i = 0; i < question.size(); i++) {
                 System.out.println(question.get(i).getQuestionText());
-                if(question.get(i).evaluateResponse
-                    (question.get(i).getResponse())) {
+                if (question.get(i).evaluateResponse(
+                    question.get(i).getResponse())) {
                     System.out.println(" Correct Answer! - Marks Awarded: "
-                     +question.get(i).getMaxMarks());
+                     + question.get(i).getMaxMarks());
                     total += question.get(i).getMaxMarks();
                 } else {
                     System.out.println(" Wrong Answer! - Penalty: "
-                     +question.get(i).getPenalty());
+                     + question.get(i).getPenalty());
                     total += question.get(i).getPenalty();
                 }
             }
@@ -331,7 +331,7 @@ public final class Solution {
                 	System.out.println("| Load Questions |");
                 	System.out.println("|----------------|");
                 	q.loadQuestions(s, q, Integer.parseInt(tokens[1]));
-                } catch ( Exception e) {
+                } catch (Exception e) {
                 	System.out.println(e.getMessage());
                 }
                 break;
