@@ -296,18 +296,18 @@ public final class Solution {
                 	System.out.println(e.getMessage());
                 }
                 break;
-                // case "START_QUIZ":
-                // System.out.println("|------------|");
-                // System.out.println("| Start Quiz |");
-                // System.out.println("|------------|");
-                // q.startQuiz(s, q, Integer.parseInt(tokens[1]));
-                // break;
-                // case "SCORE_REPORT":
-                // System.out.println("|--------------|");
-                // System.out.println("| Score Report |");
-                // System.out.println("|--------------|");
-                // displayScore(q);
-                // break;
+                case "START_QUIZ":
+                System.out.println("|------------|");
+                System.out.println("| Start Quiz |");
+                System.out.println("|------------|");
+                q.startQuiz(s, q, Integer.parseInt(tokens[1]));
+                break;
+                case "SCORE_REPORT":
+                System.out.println("|--------------|");
+                System.out.println("| Score Report |");
+                System.out.println("|--------------|");
+                q.displayScore(q);
+                break;
                 default:
                 break;
             }
