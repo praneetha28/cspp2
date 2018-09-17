@@ -254,7 +254,7 @@ class Quiz {
                 total += question.get(i).getPenalty();
             }
     	}
-        System.out.println("Total score: " + total);
+        System.out.println("Total Score: " + total);
     }
     /**
      * Gets the question.
