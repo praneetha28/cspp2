@@ -179,27 +179,27 @@ class Quiz {
             String line = scan.nextLine();
             String[] array = line.split(":");
             String[] answers = array[1].split(",");
-            quiz.addQuestion(new Question(array[0], answers,
-             Integer.parseInt(array[2]), Integer.parseInt(array[3]),
-              Integer.parseInt(array[4])));
-            q--;
-            if ( array.length < 5 ) {
-        		throw new Exception ("Error! Malformed question");
+            // System.out.println(array[0]);
+            if ( array[4] == " ") {
+        		throw new Exception("Error! Malformed question");
         	}
             if (answers.length < 2) {
-        		throw new Exception (array[0] + " does not have enough answer choices");
+        		throw new Exception(array[0] + " does not have enough answer choices");
         	}
         	if (Integer.parseInt(array[2]) < 1 && Integer.parseInt(array[2]) > answers.length ) {
-        		throw new Exception ("Error! Correct answer choice number is out of range for " + array[0]);
+        		throw new Exception("Error! Correct answer choice number is out of range for " + array[0]);
         	}
         	if (Integer.parseInt(array[3]) < 0) {
-        		throw new Exception ("Invalid max marks for " + array[0]);
+        		throw new Exception("Invalid max marks for " + array[0]);
         	}
         	if (Integer.parseInt(array[4]) > 0) {
         		throw new Exception("Inavlid penalty for " + array[0]);
         	}
+        	quiz.addQuestion(new Question(array[0], answers,
+             Integer.parseInt(array[2]), Integer.parseInt(array[3]),
+              Integer.parseInt(array[4])));
+            q--;
         }
-        System.out.println(qc + " are added to the quiz");
     }
     /**
      * Starts a quiz.
