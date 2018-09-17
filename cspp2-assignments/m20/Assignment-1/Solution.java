@@ -244,17 +244,19 @@ class Quiz {
     public void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
     	int total = 0;
-        for (int i = 0; i < question.size(); i++) {
-    		System.out.println(question.get(i).getQuestionText());
-    		if(question.get(i).evaluateResponse(question.get(i).getResponse())) {
-                System.out.println(" Correct Answer! - Marks Awarded: " +question.get(i).getMaxMarks());
-                total += question.get(i).getMaxMarks();
-            } else {
-                System.out.println(" Wrong Answer! - Penalty: " +question.get(i).getPenalty());
-                total += question.get(i).getPenalty();
+        if (question.size() > 0) {
+            for (int i = 0; i < question.size(); i++) {
+                System.out.println(question.get(i).getQuestionText());
+                if(question.get(i).evaluateResponse(question.get(i).getResponse())) {
+                    System.out.println(" Correct Answer! - Marks Awarded: " +question.get(i).getMaxMarks());
+                    total += question.get(i).getMaxMarks();
+                } else {
+                    System.out.println(" Wrong Answer! - Penalty: " +question.get(i).getPenalty());
+                    total += question.get(i).getPenalty();
+                }
             }
-    	}
-        System.out.println("Total Score: " + total);
+            System.out.println("Total Score: " + total);
+        }
     }
     /**
      * Gets the question.
