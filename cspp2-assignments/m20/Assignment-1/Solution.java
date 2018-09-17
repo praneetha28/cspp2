@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Class for question.
  */
-class Question {
+final class Question {
     /**
      * { var_description }.
      */
@@ -44,7 +44,7 @@ class Question {
      */
     Question(final String question1, final String[] choices1,
         final int correctAnswer1, final int maxMarks1, final int penalty1) {
-    	this.questiontext = question1;
+        this.questiontext = question1;
         this.choices = choices1;
         this.correctAnswer = choices[correctAnswer1 - 1].split(" ")[1];
         this.maxMarks = maxMarks1;
@@ -111,7 +111,7 @@ class Question {
      * @param      answer  The answer
      */
     public void setResponse(final String answer) {
-    	this.response = answer;
+        this.response = answer;
     }
     /**
      * Gets the response.
@@ -138,7 +138,7 @@ class Quiz {
     /**.
      * { var_description }
      */
-	private List<Question> question;
+    private List<Question> question;
     /**
      * { var_description }.
      */
@@ -155,7 +155,7 @@ class Quiz {
      * Constructs the object.
      */
     Quiz() {
-    	question = new List<Question>();
+        question = new List<Question>();
     }
     /**
      * Adds a question.
@@ -163,8 +163,8 @@ class Quiz {
      * @param      q     The question
      */
     public void addQuestion(final Question q) {
-    	question.add(q);
-    	size += 1;
+        question.add(q);
+        size += 1;
     }
     /**.
      * Loads questions.
@@ -182,7 +182,7 @@ class Quiz {
         // add the question objects to the quiz class
         int qc = q;
         if (qc == 0) {
-        	throw new Exception("Quiz does not have questions");
+            throw new Exception("Quiz does not have questions");
         }
         final int num = 3, num1 = 4, num2 = 5;
         while (qc > 0) {
@@ -221,7 +221,7 @@ class Quiz {
                         + " enough answer choices");
                 }
             } else {
-        		throw new Exception("Error! Malformed question");
+                throw new Exception("Error! Malformed question");
             }
             qc--;
         }
@@ -244,7 +244,7 @@ class Quiz {
              + "(" + question.get(i).getMaxMarks() + ")");
             int j = 0;
             for (j = 0; j < question.get(i).choices.length - 1; j++) {
-            	System.out.print(question.get(i).choices[j] + "\t");
+                System.out.print(question.get(i).choices[j] + "\t");
             }
             System.out.println(question.get(i).choices[j]);
             System.out.println();
@@ -259,7 +259,7 @@ class Quiz {
      */
     public void displayScore(final Quiz quiz) {
         // write your code here to display the score report using quiz object.
-    	int total = 0;
+        int total = 0;
         if (question.size() > 0) {
             for (int i = 0; i < question.size(); i++) {
                 System.out.println(question.get(i).getQuestionText());
@@ -328,12 +328,12 @@ public final class Solution {
             switch (tokens[0]) {
                 case "LOAD_QUESTIONS":
                 try {
-                	System.out.println("|----------------|");
-                	System.out.println("| Load Questions |");
-                	System.out.println("|----------------|");
-                	q.loadQuestions(s, q, Integer.parseInt(tokens[1]));
+                    System.out.println("|----------------|");
+                    System.out.println("| Load Questions |");
+                    System.out.println("|----------------|");
+                    q.loadQuestions(s, q, Integer.parseInt(tokens[1]));
                 } catch (Exception e) {
-                	System.out.println(e.getMessage());
+                    System.out.println(e.getMessage());
                 }
                 break;
                 case "START_QUIZ":
