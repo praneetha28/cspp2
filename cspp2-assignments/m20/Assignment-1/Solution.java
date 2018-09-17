@@ -296,12 +296,12 @@ public final class Solution {
                 	System.out.println(e.getMessage());
                 }
                 break;
-                case "START_QUIZ":
-                System.out.println("|------------|");
-                System.out.println("| Start Quiz |");
-                System.out.println("|------------|");
-                q.startQuiz(s, q, Integer.parseInt(tokens[1]));
-                break;
+                // case "START_QUIZ":
+                // System.out.println("|------------|");
+                // System.out.println("| Start Quiz |");
+                // System.out.println("|------------|");
+                // q.startQuiz(s, q, Integer.parseInt(tokens[1]));
+                // break;
                 // case "SCORE_REPORT":
                 // System.out.println("|--------------|");
                 // System.out.println("| Score Report |");
