@@ -194,7 +194,7 @@ class Quiz {
                                     Integer.parseInt(array[2]), Integer.parseInt(array[3]),
                                     Integer.parseInt(array[4])));
                             } else {
-                                throw new Exception("Inavlid penalty for " + array[0]);
+                                throw new Exception("Invalid penalty for " + array[0]);
                             }
                         } else {
                             throw new Exception("Invalid max marks for " + array[0]);
