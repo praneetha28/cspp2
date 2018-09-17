@@ -10,7 +10,7 @@ class Question {
     /**
      * { var_description }.
      */
-    public String[] choices;
+    protected String[] choices;
     /**
      * { var_description }.
      */
@@ -135,6 +135,9 @@ class Question {
  * Class for quiz.
  */
 class Quiz {
+    /**.
+     * { var_description }
+     */
 	private List<Question> question;
     /**
      * { var_description }.
@@ -163,24 +166,25 @@ class Quiz {
     	question.add(q);
     	size += 1;
     }
-    /**
+    /**.
      * Loads questions.
      *
      * @param      scan       The scan
      * @param      quiz       The quiz
-     * @param      q          The question count
+     * @param      q          The quarter
      *
+     * @throws     Exception  { exception_description }
      */
     public void loadQuestions (final Scanner scan,
-        final Quiz quiz, int q) throws Exception {
+        final Quiz quiz, final int q) throws Exception {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
         int qc = q;
-        if ( qc == 0) {
-        	throw new Exception ("Quiz does not have questions");
+        if (qc == 0) {
+        	throw new Exception("Quiz does not have questions");
         }
-        while (q > 0) {
+        while (qc > 0) {
             String line = scan.nextLine();
             String[] array = line.split(":");
             if (array.length == 5 && array[0].length() != 0 && array[1].length() != 0
@@ -208,9 +212,9 @@ class Quiz {
             } else {
         		throw new Exception("Error! Malformed question");
             }
-            q--;
+            qc--;
         }
-        System.out.println(qc + " are added to the quiz");
+        System.out.println(q + " are added to the quiz");
     }
     /**
      * Starts a quiz.
