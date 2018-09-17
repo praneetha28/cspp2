@@ -222,7 +222,6 @@ class Quiz {
             System.out.println(question.get(i).choices[j]);
             System.out.println();
         }
-        System.out.println();
         // for (int i = 0; i < question.size(); i++) {
         // 	String line = scan.nextLine();
         // 	String[] key = line.split(" ");
