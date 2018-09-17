@@ -184,24 +184,25 @@ class Quiz {
         if (qc == 0) {
         	throw new Exception("Quiz does not have questions");
         }
+        final int num = 3, num1 = 4, num2 = 5;
         while (qc > 0) {
             String line = scan.nextLine();
             String[] array = line.split(":");
-            if (array.length == 5 && array[0].length() != 0
+            if (array.length == num2 && array[0].length() != 0
              && array[1].length() != 0 && array[2].length() != 0
-              && array[3].length() != 0 && array[4].length() != 0) {
+              && array[num].length() != 0 && array[num1].length() != 0) {
                 String[] answers = array[1].split(",");
                 if (answers.length >= 2) {
                     if (Integer.parseInt(array[2]) >= 1
                         && Integer.parseInt(array[2])
                         <= answers.length) {
-                        if (Integer.parseInt(array[3]) > 0) {
-                            if (Integer.parseInt(array[4]) <= 0) {
+                        if (Integer.parseInt(array[num]) > 0) {
+                            if (Integer.parseInt(array[num1]) <= 0) {
                                 quiz.addQuestion(new
                                     Question(array[0], answers,
                                      Integer.parseInt(array[2]),
-                                     Integer.parseInt(array[3]),
-                                    Integer.parseInt(array[4])));
+                                     Integer.parseInt(array[num]),
+                                    Integer.parseInt(array[num1])));
                             } else {
                                 throw new Exception(
                                     "Invalid penalty for " + array[0]);
