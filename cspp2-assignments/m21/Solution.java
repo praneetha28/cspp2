@@ -72,7 +72,11 @@ public final class Solution {
                     System.out.println();
                     break;
                 case"Summary":
-                    fb.displaySummary();
+                    if(tokens.length == 1) {
+                        fb.displaySummary();
+                    } else {
+                        fb.displaySummary(tokens[1]);
+                    }
                     break;
                 default:
                     break;

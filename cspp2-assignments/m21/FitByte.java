@@ -1,6 +1,6 @@
 public class FitByte {
     private List<Log> logs;
-    private int size = 0;
+    private int size;
     FitByte() {
         logs = new List<Log>();
     }
@@ -10,6 +10,33 @@ public class FitByte {
     public void displaySummary() {
         for (int i = 0; i < logs.size(); i++) {
             System.out.println(logs.get(i));
+        }
+    }
+    public void displaySummary(String date) {
+        for (int i = 0; i < logs.size(); i++) {
+            if(logs.get(i) instanceof FoodLog && logs.get(i).getDate().equals(date)) {
+                System.out.println(logs.get(i));
+            }
+        }
+        for (int i = 0; i < logs.size(); i++) {
+            if(logs.get(i) instanceof WaterLog && logs.get(i).getDate().equals(date)) {
+                System.out.println(logs.get(i));
+            }
+        }
+        for (int i = 0; i < logs.size(); i++) {
+            if(logs.get(i) instanceof PhysicalActivity && logs.get(i).getDate().equals(date)) {
+                System.out.println(logs.get(i));
+            }
+        }
+        for (int i = 0; i < logs.size(); i++) {
+            if(logs.get(i) instanceof Weight && logs.get(i).getDate().equals(date)) {
+                System.out.println(logs.get(i));
+            }
+        }
+        for (int i = 0; i < logs.size(); i++) {
+            if(logs.get(i) instanceof Sleep && logs.get(i).getDate().equals(date)) {
+                System.out.println(logs.get(i));
+            }
         }
     }
     public void printFoodLog() {
