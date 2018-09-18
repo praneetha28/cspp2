@@ -9,6 +9,8 @@ import java.util.Arrays;
     /**
      * Constructs the object.
      */
+    public static final int N_U_M = 100;
+    // number
     private Solution() {
         //not used
     }

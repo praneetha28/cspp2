@@ -15,11 +15,11 @@ class Set {
     /**.
      * { var_description }
      */
-	private int[] set;
+	protected int[] set;
     /**.
      * { var_description }
      */
-	private int size;
+	protected int size;
     /**.
      * Constructs the object.
      */

@@ -294,7 +294,7 @@ public class List {
      * @return     { description_of_the_return_value }
      */
     public boolean contains(final int item) {
-        return indexOf(item) == -1;
+        return indexOf(item) > -1;
     }
     /*
      * Returns the index of the first occurrence
@@ -339,7 +339,7 @@ public class List {
         } else {
             for (int i = size; i > index; i--) {
                 list[i] = list[i - 1];
-        }
+        	}
         list[index] = item;
         size++;
         }

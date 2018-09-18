@@ -9,23 +9,23 @@ class Question {
     /**.
      * { var_description }
      */
-    private String quizname;
+    public String quizname;
     /**.
      * { var_description }
      */
-    private String choices;
+    public String[] choices;
     /**.
      * { var_description }
      */
-    private int crctanswr;
+    public int crctanswr;
     /**.
      * { var_description }
      */
-    private int maxmarks;
+    public int maxmarks;
     /**.
      * { var_description }
      */
-    private int penalty;
+    public int penalty;
     /**.
      * Constructs the object.
      *
@@ -35,7 +35,7 @@ class Question {
      * @param      marks   The marks
      * @param      penlty  The penlty
      */
-    Question(final String qname, final String choice,
+    Question(final String qname, final String[] choice,
      final int answer, final int marks, final int penlty) {
         this.quizname = qname;
         this.choices = choice;
@@ -56,11 +56,11 @@ class Question {
      *
      * @return     { description_of_the_return_value }
      */
-    public String getchoices() {
-        String[] c = choices.split(",");
-        int i = 0;
-        return c[i] + "    " + c[i + 1] + "    " + c[i + 2] + "    " + c[i + 3];
-    }
+    // public String getchoices() {
+    //     String[] c = choices.split(",");
+    //     int i = 0;
+    //     return c[i] + "    " + c[i + 1] + "    " + c[i + 2] + "    " + c[i + 3];
+    // }
     /**.
      * { function_description }
      *
@@ -96,6 +96,7 @@ public final class Solution {
     private Solution() {
         // leave this blank
     }
+    static List<Question> question = new List<Question>();
     /**
      * main function to execute test cases.
      *
@@ -144,25 +145,27 @@ public final class Solution {
      * @param      quiz           The quiz object
      * @param      questionCount  The question count
      */
-    public static void loadQuestions(final Scanner s,
-     final Quiz quiz, final int questionCount) {
+    public static void loadQuestions (final Scanner s,
+     final Quiz quiz, int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
-        if ( questionCount == 0){
-        	System.out.println("Quiz does not have questions");
-        } else {
-        	System.out.println("Error! Malformed question");
-        }
-        // List<Question> question = new List<Question>();
-        // while (s.hasNext()) {
-        //     String line = s.nextLine();
-        //     String[] array = line.split(":");
-        //     question.add(new Question(array[0], array[1],
-        //      Integer.parseInt(array[2]), Integer.parseInt(array[3]),
-        //       Integer.parseInt(array[4])));
+        // if ( questionCount == 0){
+        // 	System.out.println("Quiz does not have questions");
+        // } else {
+        // 	System.out.println("Error! Malformed question");
         // }
-        // System.out.println(questionCount + "are added to the quiz");
+        int qc = questionCount;
+        while (questionCount > 0) {
+            String line = s.nextLine();
+            String[] array = line.split(":");
+            String[] answers = array[1].split(",");
+            question.add(new Question(array[0], answers,
+             Integer.parseInt(array[2]), Integer.parseInt(array[3]),
+              Integer.parseInt(array[4])));
+            questionCount--;
+        }
+        System.out.println(qc + " are added to the quiz");
     }
 
     /**
@@ -177,10 +180,20 @@ public final class Solution {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
-        // System.out.println(quiz.getquizname());
-        // System.out.println(quiz.getchoices());
-        // for (int i = 0; i < answerCount; i++) {
-        //     String res = s.nextLine();
+        // for (int i = 0; i < question.size(); i++) {
+        //     System.out.println(question.get(i).quizname + "(" + question.get(i).maxmarks + ")");
+        //     int j = 0;
+        //     for(  j = 0; j < question.get(i).choices.length - 1; j++ ) {
+        //     	System.out.print(question.get(i).choices[j] + "    ");
+        //     }
+        //     System.out.println(question.get(i).choices[j]);
+        //     System.out.println();
+        // }
+        // System.out.println();
+        // while(answerCount > 0) {
+        // 	String line = s.nextLine();
+        // 	String[] key = line.split(" ");
+
         // }
     }
     /**.

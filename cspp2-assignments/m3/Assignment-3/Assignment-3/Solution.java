@@ -2,7 +2,6 @@
     * Author : praneetha.
     * date : 29/08/18
 */
-
 import java.util.Scanner;
 /**.
     * scanner function for taking user input
