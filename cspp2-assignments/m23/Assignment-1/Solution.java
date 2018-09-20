@@ -7,12 +7,12 @@ public final class Solution {
 	public static void main(String[] args) {
 		Plagiarism plg = new Plagiarism();
 		Scanner scan = new Scanner(System.in);
-		String line = scan.next();
-		File file = new File(line);
-		File[] listFiles = file.listFiles();
-		int l = listFiles.length;
-		int[][] matrix = new int[l][l];
 		try {
+			String line = scan.next();
+			File file = new File(line);
+			File[] listFiles = file.listFiles();
+			int l = listFiles.length;
+			int[][] matrix = new int[l][l];
 			for(int i = 0;i < l; i++) {
 				for (int j = 0; j < l; j++) {
 					if (i < j) {
@@ -22,9 +22,9 @@ public final class Solution {
 					}
 				}
 			}
+			plg.print(matrix, listFiles);
 		} catch (Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("empty directory");
 		}
-		plg.print(matrix, listFiles);
 	}
 }
