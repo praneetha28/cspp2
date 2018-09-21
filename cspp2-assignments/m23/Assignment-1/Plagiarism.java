@@ -87,12 +87,16 @@ class Plagiarism {
 		doc = doc.toLowerCase();
 		String token = doc.replaceAll("[^a-zA-Z ]", "");
 		String[] tokens = token.split(" ");
-		List<String> wrdList = removeStopWords(tokens);
-		for (int i = 0;i < wrdList.size(); i++) {
-			if (ht.containsKey(wrdList.get(i))) {
-				ht.put(wrdList.get(i), ht.get(wrdList.get(i)) + 1);
+		// List<String> wrdList = removeStopWords(tokens);
+		List<String> resWords = new List<String>();
+		for(String word : tokens) {
+				resWords.add(word);
+		}
+		for (int i = 0;i < resWords.size(); i++) {
+			if (ht.containsKey(resWords.get(i))) {
+				ht.put(resWords.get(i), ht.get(resWords.get(i)) + 1);
 			} else {
-				ht.put(wrdList.get(i), 1);
+				ht.put(resWords.get(i), 1);
 			}
 		}
 		return ht;
