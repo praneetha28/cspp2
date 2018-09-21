@@ -37,6 +37,9 @@ public final class Solution {
             int[][] matrix = new int[l][l];
             for (int i = 0; i < l; i++) {
                 for (int j = 0; j < l; j++) {
+                    if(i == j) {
+                        matrix[i][j] = 100;
+                    }
                     if (i < j) {
                         matrix[i][j] = plg.bagOfWords(plg.toString(
                             listFiles[i]), plg.toString(listFiles[j]));
