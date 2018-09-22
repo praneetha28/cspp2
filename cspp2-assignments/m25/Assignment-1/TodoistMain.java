@@ -13,6 +13,10 @@ public class TodoistMain {
     /**
      * Starts a test.
      */
+    private static final int N = 3;
+    private static final int N1 = 4;
+    private static final int N2 = 5;
+    private static final int N3 = 6;
     public static void startTest() {
         Todoist todo = new Todoist();
         Scanner s = new Scanner(System.in);
@@ -84,10 +88,10 @@ public class TodoistMain {
     public static Task createTask(final String[] tokens) throws Exception {
         String title = tokens[1];
         String assignedTo = tokens[2];
-        int timeToComplete = Integer.parseInt(tokens[3]);
-        boolean important = tokens[4].equals("y");
-        boolean urgent = tokens[5].equals("y");
-        String status = tokens[6];
+        int timeToComplete = Integer.parseInt(tokens[N]);
+        boolean important = tokens[N1].equals("y");
+        boolean urgent = tokens[N2].equals("y");
+        String status = tokens[N3];
         return new Task(
             title, assignedTo, timeToComplete, important, urgent, status);
     }
