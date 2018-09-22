@@ -78,6 +78,9 @@ class Todoist {
     					if (taskArray[i].getImportant().equals("Important")) {
     						if (taskArray[i].getUrgent().equals("Not Urgent")) {
     							countTask[count1++] = taskArray[i];
+    							if (count1 == 3) {
+    								break;
+    							}
     						}
     					}
     				}
