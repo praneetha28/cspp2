@@ -15,7 +15,7 @@ class Todoist {
         taskArray = new Task[capacity];
     }
 
-    public void add(final Task task) {
+    public void addTask(final Task task) {
         if (size == taskArray.length) {
             resize();
         }
@@ -32,14 +32,52 @@ class Todoist {
     //         return taskArray[index];
     //     }
     // }
+    public int size() {
+    	return size;
+    }
     public String toString() {
     	String str = "";
-    	for(int i = 0; i < taskArray.length; i++) {
-    		str += taskArray[i].toString();
+    	for(int i = 0; i < size; i++) {
+    		str += taskArray[i]+ "\n";
+
     	}
     	return str;
     }
-    // public Task getNextTask(String name) {
 
-    // }
+    public Task getNextTask(String name) {
+    	for (int i = 0; i < size; i++) {
+    		if (taskArray[i].getAssignedTo().equals(name)) {
+    			if (taskArray[i].getStatus().equals("todo")) {
+    				if (taskArray[i].getImportant().equals("Important")) {
+    					if (taskArray[i].getUrgent().equals("Not Urgent")) {
+    						return taskArray[i];
+    					} else {
+    						return taskArray[i];
+    					}
+    				}
+    			}
+    		}
+    	}
+    	return null;
+    }
+    public Task[] getNextTask(String name, int count) {
+    	Task[] countTask = new Task[count];
+    	for (int i = 0; i < count; i++) {
+    		for (int j = 0; j < size; j++) {
+    			if (taskArray[j].getAssignedTo().equals(name)) {
+    				countTask[i] = taskArray[j];
+    			}
+    		}
+    	}
+    	return countTask;
+    }
+    public int totalTime4Completion() {
+    	int res = 0;
+    	for (int i = 0; i < size; i++) {
+    		if (taskArray[i].getStatus().equals("todo")) {
+    			res += taskArray[i].getTimeToComplete();
+    		}
+    	}
+    	return res;
+    }
 }
