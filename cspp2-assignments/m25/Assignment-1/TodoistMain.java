@@ -8,8 +8,10 @@ import java.util.Arrays;
 /**
  * Class for todoist main.
  */
-public class TodoistMain {
+public final class TodoistMain {
+    private TodoistMain() {
 
+    }
     /**
      * Starts a test.
      */
