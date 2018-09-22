@@ -51,7 +51,16 @@ class Todoist {
     				if (taskArray[i].getImportant().equals("Important")) {
     					if (taskArray[i].getUrgent().equals("Not Urgent")) {
     						return taskArray[i];
-    					} else {
+    					}
+    				}
+    			}
+    		}
+    	}
+    	for (int i = 0; i < size; i++) {
+    		if (taskArray[i].getAssignedTo().equals(name)) {
+    			if (taskArray[i].getStatus().equals("todo")) {
+    				if (taskArray[i].getImportant().equals("Important")) {
+    					if (taskArray[i].getUrgent().equals("Urgent")) {
     						return taskArray[i];
     					}
     				}
