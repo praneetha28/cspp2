@@ -10,7 +10,14 @@ import java.io.File;
  * { item_description }
  */
 import java.util.ArrayList;
+/**.
+ * { item_description }
+ */
 public final class Solution {
+    /**.
+     * Constructs the object.
+     */
+    private static final int X = 100;
     /**.
      * Constructs the object.
      */
@@ -19,14 +26,21 @@ public final class Solution {
          * { item_description }
          */
     }
-
-    public static double lcs(String s1, String s2) {
+    /**.
+     * { function_description }
+     *
+     * @param      s1    The s 1
+     * @param      s2    The s 2
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public static double lcs(final String s1, final String s2) {
         String str = LongestCommonSubstring.lcs(s1, s2);
         int len = str.length() * 2;
         int l1 = s1.length();
         int l2 = s2.length();
         int length = l1 + l2;
-        return  ((double)len / length) * 100;
+        return  ((double) len / length) * X;
     }
     /**.
      * { function_description }
@@ -47,8 +61,8 @@ public final class Solution {
             double[][] matrix = new double[l][l];
             for (int i = 0; i < l; i++) {
                 for (int j = 0; j < l; j++) {
-                    if(i == j) {
-                        matrix[i][j] = 100;
+                    if (i == j) {
+                        matrix[i][j] = X;
                     }
                     if (i < j) {
                         matrix[i][j] = plg.bagOfWords(plg.toString(
@@ -60,14 +74,6 @@ public final class Solution {
                     }
                 }
             }
-            // // ArrayList<Integer> result = new ArrayList<Integer>();
-            // for (int i = 0; i < l - 1; i++) {
-            //     System.out.println(plg.longestSubstring(plg.toString(listFiles[i]), plg.toString(listFiles[i + 1])));
-            //     // result.add(plg.longestSubstring(plg.toString(listFiles[i]), plg.toString(listFiles[i + 1])));
-            // }
-            // // for(Integer i : result) {
-            // //     System.out.println(i);
-            // // }
             plg.print(matrix, listFiles);
         } catch (Exception e) {
             System.out.println("empty directory");
