@@ -14,9 +14,21 @@ public class TodoistMain {
      * Starts a test.
      */
     private static final int N = 3;
+    /**.
+     * { var_description }
+     */
     private static final int N1 = 4;
+    /**.
+     * { var_description }
+     */
     private static final int N2 = 5;
+    /**.
+     * { var_description }
+     */
     private static final int N3 = 6;
+    /**.
+     * Starts a test.
+     */
     public static void startTest() {
         Todoist todo = new Todoist();
         Scanner s = new Scanner(System.in);
