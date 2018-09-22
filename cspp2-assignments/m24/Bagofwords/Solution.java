@@ -9,10 +9,6 @@ import java.io.File;
 /**.
  * { item_description }
  */
-import java.util.ArrayList;
-/**.
- * { item_description }
- */
 public final class Solution {
     /**.
      * Constructs the object.
