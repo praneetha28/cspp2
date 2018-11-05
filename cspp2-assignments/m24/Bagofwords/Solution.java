@@ -22,22 +22,22 @@ public final class Solution {
          * { item_description }
          */
     }
-    /**.
-     * { function_description }
-     *
-     * @param      s1    The s 1
-     * @param      s2    The s 2
-     *
-     * @return     { description_of_the_return_value }
-     */
-    public static double lcs(final String s1, final String s2) {
-        String str = LongestCommonSubstring.lcs(s1, s2);
-        int len = str.length() * 2;
-        int l1 = s1.length();
-        int l2 = s2.length();
-        int length = l1 + l2;
-        return  ((double) len / length) * X;
-    }
+    // /**.
+    //  * { function_description }
+    //  *
+    //  * @param      s1    The s 1
+    //  * @param      s2    The s 2
+    //  *
+    //  * @return     { description_of_the_return_value }
+    //  */
+    // public static double lcs(final String s1, final String s2) {
+    //     //String str = LongestCommonSubstring.lcs(s1, s2);
+    //     int len = str.length() * 2;
+    //     int l1 = s1.length();
+    //     int l2 = s2.length();
+    //     int length = l1 + l2;
+    //     return  ((double) len / length) * X;
+    // }
     /**.
      * { function_description }
      *

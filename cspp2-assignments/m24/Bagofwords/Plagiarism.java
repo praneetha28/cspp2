@@ -121,53 +121,53 @@ class Plagiarism {
 		for(int i = 0; i < listFiles.length - 1; i++) {
 			sb.append(listFiles[i].getName() + "\t");
 			for(int k = 0; k < listFiles.length; k++) {
-				sb.append(matrix[i][k] + "\t\t");
+				sb.append(Math.round(matrix[i][k]) + "\t\t");
 			}
 			sb.append("\n");
 		}
 		sb.append(listFiles[listFiles.length - 1].getName() + "\t");
 		for(int k = 0; k < listFiles.length; k++) {
-			sb.append(matrix[listFiles.length - 1][k] + "\t\t");
+			sb.append(Math.round(matrix[listFiles.length - 1][k]) + "\t\t");
 		}
 		System.out.println(sb.toString());
 	}
-	public static int longestSubstring(String s1, String s2) {
-		// System.out.println("in method");
-    	int m = s1.length();
-    	// System.out.println(m);
-		int n = s2.length();
-		// System.out.println(n);
-		s1 = s1.replaceAll("[ ]", "");
-		s2 = s2.replaceAll("[ ]", "");
-		char[] c1 = s1.toCharArray();
-		char[] c2 = s2.toCharArray();
-		int res = 0;
-		int[][] LCS = new int[c1.length + 1][c2.length + 1];
-		for(int i=0; i <= c1.length; i++){
-			for(int j=0; j <= c2.length; j++){
-				if(i == 0 || j == 0){
-					LCS[i][j]=0;
-				}else if (c1[i-1] == c2[j-1]) {
-					LCS[i][j] = LCS[i-1][j-1]+1;
-					res = Math.max(res, LCS[i][j]);
-				}
-				else {
-					LCS[i][j] = 0;
-				}
+	// public static int longestSubstring(String s1, String s2) {
+	// 	// System.out.println("in method");
+ //    	int m = s1.length();
+ //    	// System.out.println(m);
+	// 	int n = s2.length();
+	// 	// System.out.println(n);
+	// 	s1 = s1.replaceAll("[ ]", "");
+	// 	s2 = s2.replaceAll("[ ]", "");
+	// 	char[] c1 = s1.toCharArray();
+	// 	char[] c2 = s2.toCharArray();
+	// 	int res = 0;
+	// 	int[][] LCS = new int[c1.length + 1][c2.length + 1];
+	// 	for(int i=0; i <= c1.length; i++){
+	// 		for(int j=0; j <= c2.length; j++){
+	// 			if(i == 0 || j == 0){
+	// 				LCS[i][j]=0;
+	// 			}else if (c1[i-1] == c2[j-1]) {
+	// 				LCS[i][j] = LCS[i-1][j-1]+1;
+	// 				res = Math.max(res, LCS[i][j]);
+	// 			}
+	// 			else {
+	// 				LCS[i][j] = 0;
+	// 			}
 
-			}
-		}
-		System.out.println(res);
-		float sum = m + n;
-		System.out.println(sum);
-		float res1 = (res * 2);
-		System.out.println(res1);
-		float res2 = res1 / sum;
-		System.out.println(res2);
-		float res3 = res2 * 100;
-		System.out.println(res3);
-		int val = (int) res2;
-		System.out.println(val);
-		return val;
-	}
+	// 		}
+	// 	}
+	// 	System.out.println(res);
+	// 	float sum = m + n;
+	// 	System.out.println(sum);
+	// 	float res1 = (res * 2);
+	// 	System.out.println(res1);
+	// 	float res2 = res1 / sum;
+	// 	System.out.println(res2);
+	// 	float res3 = res2 * 100;
+	// 	System.out.println(res3);
+	// 	int val = (int) res2;
+	// 	System.out.println(val);
+	// 	return val;
+	// }
 }
